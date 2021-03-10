@@ -98,7 +98,6 @@ Creare un accordion con almeno 5 elementi.
 +5p prendere i dati tramite request da una API pubblica a tua scelta
 
 
-
 ### Validazione form(60p-70p) - PRENOTATO DA:
 Creare un form con almeno 2 campi di testo, un input di tipo select, un input di tipo checkbox ed un input di tipo radio.
 Al click del bottone eseguire la validazione del form controllando unicamente che i campi sano stati inseriti tutti.
@@ -270,7 +269,7 @@ ignora le porprietà che contengono oggetti, liste o funzioni
 Le righe selezionate rimangono sempre visibili nella tabella nonostante il filtro
 
 
-### Tabella da lista di oggetti Paginabile (75p-95) - PRENOTATO DA:
+### Tabella da lista di oggetti Paginabile (75p-100p) - PRENOTATO DA:
 BASE DA CUI PARTIRE: 'Tabella da lista di oggetti'
 Creare una paginazione per la tabella,
 verranno visualizzati solo 5 elementi per volta. 
@@ -283,6 +282,10 @@ Sotto la tabella creare tasti avanti ed indietro e mostrare il numero di pagina.
 +10p al posto del numero di pagina mostrare 5 numeri: 
 2 pagine precedenti, pagina corrente, 2 pagine successive, 
 Cliccando su uno dei numeri va a quella pagina.
+
++5p Al click su una riga viene selezionata(cambia style: colore background e testo) la riga 
+in questione rimarrà sempre visibile come prima riga indipendentemente dalla paginazione.
+Cliccando su una riga selezionata verra deselezionata.
 
 
 ### Tabella da lista di oggetti Dinamici (75p-100p) - PRENOTATO DA:
@@ -300,6 +303,18 @@ Al click sul tasto la riga viene rimossa
 Al click su una riga seleziona la deseleziona
 Aggiungere un unico bottone rimuovi sopra la tabella.
 Alla pressione del bottone le righe selezionate vengono eliminate
+
+
+### Tabella da lista di oggetti Sortabile (80p-95p) - PRENOTATO DA:
+BASE DA CUI PARTIRE: 'Tabella da lista di oggetti'
+Al click su un header di una colonna questo vinene selezionato(cambia stile).
+Ordinare gli elementi in base alla colonna cliccata.
+Il click successivo Cambia ulteriormente stile e l'ordine si inverte
+
++5p Prendere i dati tramite request da una API pubblica a tua scelta
+
++10p aggiungere una colonna con 2 tasti: tasto su, tasto giù
+Al click su un tasto la riga viene spostata una posizione in o in giù
 
 
 ### Validazione form con password(70-100p) - PRENOTATO DA:
@@ -354,7 +369,8 @@ Non vengono conteggiate come nuovi tentativi.
 
 ### Cerca nel testo (80p-100p) - PRENOTATO DA:
 Create un paragrafo con un testo di almeno 100 caratteri, un input di tipo testo.
-Ogni volta che viene inserito o cancellato un carattere nell input colorare(o mettere in grassetto) tutte le occorrenze nel testo se presenti.
+Ogni volta che viene inserito o cancellato un carattere nell input colorare
+(o mettere in grassetto) tutte le occorrenze nel testo se presenti.
 
 +5p il testo ha un colore diverso in base a quante volte il valore cercato 
 è presente nel testo
