@@ -317,7 +317,7 @@ Il click successivo Cambia ulteriormente stile e l'ordine si inverte
 Al click su un tasto la riga viene spostata una posizione in o in giù
 
 
-### Validazione form con password(70-100p) - PRENOTATO DA:
+### Validazione form con password(70-100p) - PRENOTATO DA: GIULIO J.
 BASE DA CUI PARTIRE: 'Validazione form'
 Aggiungere 2 campi input di tipo 'password' al form.
 Se i valori dei 2 campi non sono uguali al submit del form mostrare un messaggio di errore.
@@ -350,7 +350,7 @@ pubblica che lo permetta.
 Mostare un messaggio di successo o di errore in base alla risposta della request.
 
 
-### Slot machine (80p - 95p) - PRENOTATO DA:
+### Slot machine (80p - 95p) - PRENOTATO DA: Daniele Severin
 Creare una slot machine(anche senza animazione)
 E possibile eseguire un numero di tentativi infinito
 
