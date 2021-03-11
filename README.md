@@ -121,7 +121,7 @@ L'immagine cambia ogni 3 secondi
 +5p Cambiare velocità con un input di tipo "range"
 
 
-### Calcolatrice (60p-80p) - PRENOTATO DA:
+### Calcolatrice (60p-80p) - PRENOTATO DA: Ahmed Darrag
 Creare una interfaccia con bottoni simile a quelli di una calcolatrice:
 - Cifre da 1 a 9
 - Operazioni + - * /
@@ -379,7 +379,7 @@ Ogni volta che viene inserito o cancellato un carattere nell input colorare
 cerca solo 1 volta coll'ultimo valore inserito.
 
 
-### Validazione form Con aggiunta indirizzi (90p-100p) - PRENOTATO DA:
+### Validazione form Con aggiunta indirizzi (90p-100p) - PRENOTATO DA: Stefano
 BASE DA CUI PARTIRE: esercizio 'Validazione form'
 Creare lla interno del form una sezione indirizzi 
 che all'inizio contenga solo un bottone 'aggiungi indirizzo'.
