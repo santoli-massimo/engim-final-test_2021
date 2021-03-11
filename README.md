@@ -121,7 +121,7 @@ L'immagine cambia ogni 3 secondi
 +5p Cambiare velocità con un input di tipo "range"
 
 
-### Calcolatrice (60p-80p) - PRENOTATO DA:
+### Calcolatrice (60p-80p) - PRENOTATO DA: Ahmed Darrag
 Creare una interfaccia con bottoni simile a quelli di una calcolatrice:
 - Cifre da 1 a 9
 - Operazioni + - * /
