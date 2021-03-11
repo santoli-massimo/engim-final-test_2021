@@ -305,7 +305,7 @@ Aggiungere un unico bottone rimuovi sopra la tabella.
 Alla pressione del bottone le righe selezionate vengono eliminate
 
 
-### Tabella da lista di oggetti Sortabile (80p-95p) - PRENOTATO DA:
+### Tabella da lista di oggetti Sortabile (80p-100p) - PRENOTATO DA:
 BASE DA CUI PARTIRE: 'Tabella da lista di oggetti'
 Al click su un header di una colonna questo vinene selezionato(cambia stile).
 Ordinare gli elementi in base alla colonna cliccata.
@@ -313,7 +313,7 @@ Il click successivo Cambia ulteriormente stile e l'ordine si inverte
 
 +5p Prendere i dati tramite request da una API pubblica a tua scelta
 
-+10p aggiungere una colonna con 2 tasti: tasto su, tasto giù
++15p aggiungere una colonna con 2 tasti: tasto su, tasto giù
 Al click su un tasto la riga viene spostata una posizione in o in giù
 
 
