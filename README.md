@@ -350,7 +350,7 @@ pubblica che lo permetta.
 Mostare un messaggio di successo o di errore in base alla risposta della request.
 
 
-### Slot machine (80p - 95p) - PRENOTATO DA:
+### Slot machine (80p - 95p) - PRENOTATO DA: Daniele Severin
 Creare una slot machine(anche senza animazione)
 E possibile eseguire un numero di tentativi infinito
 
@@ -412,7 +412,7 @@ Tenere traccia dei click corretti e scorretti mostare
 il rapporto successo/insuccesso in un paragrafo in tempo reale.
 
 
-### Memory (100p) - PRENOTATO DA:
+### Memory (100p) - PRENOTATO DA: Imane
 Creare il gioco del memory con almeno 16 carte.
 
 
