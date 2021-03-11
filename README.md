@@ -121,7 +121,7 @@ L'immagine cambia ogni 3 secondi
 +5p Cambiare velocità con un input di tipo "range"
 
 
-### Calcolatrice (60p-80p) - PRENOTATO DA:
+### Calcolatrice (60p-80p) - PRENOTATO DA: Ahmed Darrag
 Creare una interfaccia con bottoni simile a quelli di una calcolatrice:
 - Cifre da 1 a 9
 - Operazioni + - * /
@@ -403,7 +403,7 @@ A maggior livello di difficoltà corrisponde maggiore velocità
 A maggior livello di difficoltà corrisponde una sequenza piu lunga.
 
 
-### Prendi il div! (100p) - PRENOTATO DA:
+### Prendi il div! (100p) - PRENOTATO DA: Davide Andreana
 Creare un div contenitore che rappresenta l'area di gioco. 
 Alla pressione del tast start aggiungere all interno un div quadrato.
 Il div si muove casualmente e velocemente all interno dell'area di gioco.
