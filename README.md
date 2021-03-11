@@ -317,7 +317,7 @@ Il click successivo Cambia ulteriormente stile e l'ordine si inverte
 Al click su un tasto la riga viene spostata una posizione in o in giù
 
 
-### Validazione form con password(70-100p) - PRENOTATO DA:
+### Validazione form con password(70-100p) - PRENOTATO DA: GIULIO J.
 BASE DA CUI PARTIRE: 'Validazione form'
 Aggiungere 2 campi input di tipo 'password' al form.
 Se i valori dei 2 campi non sono uguali al submit del form mostrare un messaggio di errore.
@@ -334,7 +334,7 @@ pubblica che lo permetta.
 Mostare un messaggio di successo o di errore in base alla risposta della request.
 
 
-### Validazione form con email(80-90p) - PRENOTATO DA:
+### Validazione form con email(80-90p) - PRENOTATO DA: Franco
 BASE DA CUI PARTIRE: 'Validazione form'
 Aggiungere 1 campo input di tipo 'testo' al form in cui inserire un email.
 Controllare che l'email sia valida ovvero che rispetti il formato: x@y.z, 
