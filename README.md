@@ -198,7 +198,7 @@ La funzione accetta 2 parametri:
 +5p prendere i dati tramite request da una API pubblica a tua scelta
 
 
-### Carousel con tasti(70-85p) - PRENOTATO DA:
+### Carousel con tasti(70-85p) - PRENOTATO DA: alberto S.
 BASE DA CUI PARTIRE: Carousel.
 Aggiugere un tasto avanti ed uno indietro e uno pausa.
 Il tasto avanti e indietro portano all'immagine succesiva/precedente indipendetemente
