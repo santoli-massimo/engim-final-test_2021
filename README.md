@@ -198,7 +198,7 @@ La funzione accetta 2 parametri:
 +5p prendere i dati tramite request da una API pubblica a tua scelta
 
 
-### Carousel con tasti(70-85p) - PRENOTATO DA:
+### Carousel con tasti(70-85p) - PRENOTATO DA: alberto S.
 BASE DA CUI PARTIRE: Carousel.
 Aggiugere un tasto avanti ed uno indietro e uno pausa.
 Il tasto avanti e indietro portano all'immagine succesiva/precedente indipendetemente
@@ -403,7 +403,7 @@ A maggior livello di difficoltà corrisponde maggiore velocità
 A maggior livello di difficoltà corrisponde una sequenza piu lunga.
 
 
-### Prendi il div! (100p) - PRENOTATO DA:
+### Prendi il div! (100p) - PRENOTATO DA: Davide Andreana
 Creare un div contenitore che rappresenta l'area di gioco. 
 Alla pressione del tast start aggiungere all interno un div quadrato.
 Il div si muove casualmente e velocemente all interno dell'area di gioco.
