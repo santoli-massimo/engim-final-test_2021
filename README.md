@@ -121,7 +121,7 @@ L'immagine cambia ogni 3 secondi
 +5p Cambiare velocità con un input di tipo "range"
 
 
-### Calcolatrice (60p-80p) - PRENOTATO DA:
+### Calcolatrice (60p-80p) - PRENOTATO DA: Ahmed Darrag
 Creare una interfaccia con bottoni simile a quelli di una calcolatrice:
 - Cifre da 1 a 9
 - Operazioni + - * /
@@ -334,7 +334,7 @@ pubblica che lo permetta.
 Mostare un messaggio di successo o di errore in base alla risposta della request.
 
 
-### Validazione form con email(80-90p) - PRENOTATO DA:
+### Validazione form con email(80-90p) - PRENOTATO DA: Franco
 BASE DA CUI PARTIRE: 'Validazione form'
 Aggiungere 1 campo input di tipo 'testo' al form in cui inserire un email.
 Controllare che l'email sia valida ovvero che rispetti il formato: x@y.z, 
@@ -350,7 +350,7 @@ pubblica che lo permetta.
 Mostare un messaggio di successo o di errore in base alla risposta della request.
 
 
-### Slot machine (80p - 95p) - PRENOTATO DA:
+### Slot machine (80p - 95p) - PRENOTATO DA: Daniele Severin
 Creare una slot machine(anche senza animazione)
 E possibile eseguire un numero di tentativi infinito
 
@@ -379,7 +379,7 @@ Ogni volta che viene inserito o cancellato un carattere nell input colorare
 cerca solo 1 volta coll'ultimo valore inserito.
 
 
-### Validazione form Con aggiunta indirizzi (90p-100p) - PRENOTATO DA:
+### Validazione form Con aggiunta indirizzi (90p-100p) - PRENOTATO DA: Stefano
 BASE DA CUI PARTIRE: esercizio 'Validazione form'
 Creare lla interno del form una sezione indirizzi 
 che all'inizio contenga solo un bottone 'aggiungi indirizzo'.
@@ -412,11 +412,11 @@ Tenere traccia dei click corretti e scorretti mostare
 il rapporto successo/insuccesso in un paragrafo in tempo reale.
 
 
-### Memory (100p) - PRENOTATO DA:
+### Memory (100p) - PRENOTATO DA: Imane
 Creare il gioco del memory con almeno 16 carte.
 
 
-### Prato Fiorito (100p) - PRENOTATO DA:
+### Prato Fiorito (100p) - PRENOTATO DA: Luca Tabbia
 Creare il gioco "Prato fiorito"
 
 
