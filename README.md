@@ -416,7 +416,7 @@ il rapporto successo/insuccesso in un paragrafo in tempo reale.
 Creare il gioco del memory con almeno 16 carte.
 
 
-### Prato Fiorito (100p) - PRENOTATO DA:
+### Prato Fiorito (100p) - PRENOTATO DA: Luca Tabbia
 Creare il gioco "Prato fiorito"
 
 
