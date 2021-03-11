@@ -403,7 +403,7 @@ A maggior livello di difficoltà corrisponde maggiore velocità
 A maggior livello di difficoltà corrisponde una sequenza piu lunga.
 
 
-### Prendi il div! (100p) - PRENOTATO DA:
+### Prendi il div! (100p) - PRENOTATO DA: Davide Andreana
 Creare un div contenitore che rappresenta l'area di gioco. 
 Alla pressione del tast start aggiungere all interno un div quadrato.
 Il div si muove casualmente e velocemente all interno dell'area di gioco.
