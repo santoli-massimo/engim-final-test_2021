@@ -143,7 +143,7 @@ come se fosse stato inserito con i tasti.
 +5p Aggiungere tasto indietro, che se premuto elimina l'ultima cifra/operazione inserita
 
 
-### Inodvina numero (60-100p) - PRENOTATO DA:
+### Inodvina numero (60-100p) - PRENOTATO DA: Alessandro Ferrero
 Creare un input di tipo numero, un tasto invia, un paragrafo.
 L'applicazione sceglie un numero casuale da 1 a 100 che rimane sconosciuto all'utente.
 Quando l'utente scrive un numero nell input e preme il tasto invia 
@@ -305,7 +305,7 @@ Aggiungere un unico bottone rimuovi sopra la tabella.
 Alla pressione del bottone le righe selezionate vengono eliminate
 
 
-### Tabella da lista di oggetti Sortabile (80p-95p) - PRENOTATO DA:
+### Tabella da lista di oggetti Sortabile (80p-100p) - PRENOTATO DA:
 BASE DA CUI PARTIRE: 'Tabella da lista di oggetti'
 Al click su un header di una colonna questo vinene selezionato(cambia stile).
 Ordinare gli elementi in base alla colonna cliccata.
@@ -313,11 +313,11 @@ Il click successivo Cambia ulteriormente stile e l'ordine si inverte
 
 +5p Prendere i dati tramite request da una API pubblica a tua scelta
 
-+10p aggiungere una colonna con 2 tasti: tasto su, tasto giù
++15p aggiungere una colonna con 2 tasti: tasto su, tasto giù
 Al click su un tasto la riga viene spostata una posizione in o in giù
 
 
-### Validazione form con password(70-100p) - PRENOTATO DA:
+### Validazione form con password(70-100p) - PRENOTATO DA: GIULIO J.
 BASE DA CUI PARTIRE: 'Validazione form'
 Aggiungere 2 campi input di tipo 'password' al form.
 Se i valori dei 2 campi non sono uguali al submit del form mostrare un messaggio di errore.
