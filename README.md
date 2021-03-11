@@ -334,7 +334,7 @@ pubblica che lo permetta.
 Mostare un messaggio di successo o di errore in base alla risposta della request.
 
 
-### Validazione form con email(80-90p) - PRENOTATO DA:
+### Validazione form con email(80-90p) - PRENOTATO DA: Franco
 BASE DA CUI PARTIRE: 'Validazione form'
 Aggiungere 1 campo input di tipo 'testo' al form in cui inserire un email.
 Controllare che l'email sia valida ovvero che rispetti il formato: x@y.z, 
