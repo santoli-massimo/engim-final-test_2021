@@ -143,7 +143,7 @@ come se fosse stato inserito con i tasti.
 +5p Aggiungere tasto indietro, che se premuto elimina l'ultima cifra/operazione inserita
 
 
-### Inodvina numero (60-100p) - PRENOTATO DA:
+### Inodvina numero (60-100p) - PRENOTATO DA: Alessandro Ferrero
 Creare un input di tipo numero, un tasto invia, un paragrafo.
 L'applicazione sceglie un numero casuale da 1 a 100 che rimane sconosciuto all'utente.
 Quando l'utente scrive un numero nell input e preme il tasto invia 
@@ -317,7 +317,7 @@ Il click successivo Cambia ulteriormente stile e l'ordine si inverte
 Al click su un tasto la riga viene spostata una posizione in o in giù
 
 
-### Validazione form con password(70-100p) - PRENOTATO DA:
+### Validazione form con password(70-100p) - PRENOTATO DA: GIULIO J.
 BASE DA CUI PARTIRE: 'Validazione form'
 Aggiungere 2 campi input di tipo 'password' al form.
 Se i valori dei 2 campi non sono uguali al submit del form mostrare un messaggio di errore.
