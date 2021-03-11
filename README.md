@@ -412,7 +412,7 @@ Tenere traccia dei click corretti e scorretti mostare
 il rapporto successo/insuccesso in un paragrafo in tempo reale.
 
 
-### Memory (100p) - PRENOTATO DA:
+### Memory (100p) - PRENOTATO DA: Imane
 Creare il gioco del memory con almeno 16 carte.
 
 
