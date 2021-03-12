@@ -367,7 +367,7 @@ Non vengono conteggiate come nuovi tentativi.
 +5p Produrre un risultato vincente se non si ha gia vinto nei 10 giri precedenti.
 
 
-### Cerca nel testo (80p-100p) - PRENOTATO DA:
+### Cerca nel testo (80p-100p) - PRENOTATO DA: Arash N.
 Create un paragrafo con un testo di almeno 100 caratteri, un input di tipo testo.
 Ogni volta che viene inserito o cancellato un carattere nell input colorare
 (o mettere in grassetto) tutte le occorrenze nel testo se presenti.
