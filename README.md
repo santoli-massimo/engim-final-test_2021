@@ -424,3 +424,6 @@ Creare il gioco "Prato fiorito"
 Scrivete qui sotto gli esami che volte proporre con un titole e delle istruzioni per lo svolgimento
 se saranno approvati verranno spostati dal docente nella sezione sovrastante.
 Se siete gli autori dell'esame proposto potete prenotarlo in anticipo scriveno di vostro nome di fianco al titolo.
+
+Mattiazzo Marco propone gioco di carte BlackJack.
+mostrerò a video delle carte. lo scopo del gioco è arrivare ad una somma di 21 o vicino. ci sarà un button che darà carte random e un ipotetico avversario che sarà anche il mazziere.
