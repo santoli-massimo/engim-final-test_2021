@@ -421,13 +421,13 @@ Creare il gioco "Prato fiorito"
 
 
 ### BlackJack (80p-100p) - PRENOTATO DA: Mattiazzo Marco
-Lo scopo del gioco è avvicinarsi il più possibile a 21 senza superarlo.
+Lo scopo del gioco è avvicinarsi il più possibile a 22 senza superarlo.
 Creare un array chiamato "mazzi" con 3 copie per ciascuna delle carte.
 Il gioco inzia assegnado al giocatore 2 carte prese casualmente dall'array "mazzi".
 Ogni carta distribuita va rimossa dall array "mazzi".
 
 Il giocatore ha un bottone "Carta" che gli distribuisce un altra carta, ed un bottone "Passa" che termina il round.
-Il gioco si ferma quando il giocatore supera 21(perde) o passa.
+Il gioco si ferma quando il giocatore supera 22(perde) o passa.
 
 
 +20p Creare un avversario artificiale detto "Mazziere":
