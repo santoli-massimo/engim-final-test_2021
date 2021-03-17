@@ -334,7 +334,7 @@ pubblica che lo permetta.
 Mostare un messaggio di successo o di errore in base alla risposta della request.
 
 
-### Validazione form con email(80-90p) - PRENOTATO DA: Franco
+### Validazione form con email(80-100p) - PRENOTATO DA: Franco
 BASE DA CUI PARTIRE: 'Validazione form'
 Aggiungere 1 campo input di tipo 'testo' al form in cui inserire un email.
 Controllare che l'email sia valida ovvero che rispetti il formato: x@y.z, 
@@ -420,10 +420,32 @@ Creare il gioco del memory con almeno 16 carte.
 Creare il gioco "Prato fiorito"
 
 
+### BlackJack (80p-100p) - PRENOTATO DA: Mattiazzo Marco
+Lo scopo del gioco è avvicinarsi il più possibile a 21 senza superarlo.
+Creare un array chiamato "mazzi" con 3 copie per ciascuna delle carte.
+Il gioco inzia assegnado al giocatore 2 carte prese casualmente dall'array "mazzi".
+Ogni carta distribuita va rimossa dall array "mazzi".
+
+Il giocatore ha un bottone "Carta" che gli distribuisce un altra carta, ed un bottone "Passa" che termina il round.
+Il gioco si ferma quando il giocatore supera 21(perde) o passa.
+
+
++20p Creare un avversario artificiale detto "Mazziere":
+Il giocatore ed il mazziere giocano 1 mano a testa alternandosi.
+Ad ogni mano il giocatore o il mazziere può prendere una carta o passare.
+Modificare il bottone "Passa": ora fa giocare una mano all'avversario artificiale.
+
+L'avversario artificiale prende sempre una nuova carta ad ogni mano
+fino a che non ha un punteggio >= a 18. Da quel momento passa sempre.
+
+Il gioco si ferma quando uno dei 2 perde o se entrambi passano.
+
++10p Far scegliere il numero di mazzi da usare ovvero quante copie di ogni carta saranno disponibili nell'array "mazzi"
+
+
+
 # ESAMI PROPOSTI DAGLI STUDENTI
 Scrivete qui sotto gli esami che volte proporre con un titole e delle istruzioni per lo svolgimento
 se saranno approvati verranno spostati dal docente nella sezione sovrastante.
 Se siete gli autori dell'esame proposto potete prenotarlo in anticipo scriveno di vostro nome di fianco al titolo.
 
-Mattiazzo Marco propone gioco di carte BlackJack.
-mostrerò a video delle carte. lo scopo del gioco è arrivare ad una somma di 21 o vicino. ci sarà un button che darà carte random e un ipotetico avversario che sarà anche il mazziere.
