@@ -379,7 +379,7 @@ Ogni volta che viene inserito o cancellato un carattere nell input colorare
 cerca solo 1 volta coll'ultimo valore inserito.
 
 
-### Validazione form Con aggiunta indirizzi (90p-100p) - PRENOTATO DA: Stefano
+### Validazione form Con aggiunta indirizzi (90p-100p) - PRENOTATO DA: Stefano dS
 BASE DA CUI PARTIRE: esercizio 'Validazione form'
 Creare lla interno del form una sezione indirizzi 
 che all'inizio contenga solo un bottone 'aggiungi indirizzo'.
