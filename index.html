@@ -1,59 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>Title</title>
 
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+    integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
 
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#">Engim 2021</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">Engim 2021</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
 
-      <li class="nav-item active page-home page-link"  >
-        <a class="nav-link" data-page="home">Home</a>
-      </li>
+        <li class="nav-item active page-home page-link">
+          <a class="nav-link" data-page="home">Home</a>
+        </li>
 
-      <li class="nav-item page-info page-link" >
-        <a class="nav-link" data-page="info">Info</a>
-      </li>
+        <li class="nav-item page-info page-link">
+          <a class="nav-link" data-page="info">Info</a>
+        </li>
 
-      <li class="nav-item page-info page-link" >
-        <a class="nav-link" data-page="Quevedo">Quevedo</a>
-      </li>
+        <li class="nav-item page-info page-link">
+          <a class="nav-link" data-page="arash">Arash N.</a>
+        </li>
 
-      <li class="nav-item page-info page-link" >
-        <a class="nav-link" data-page="Stefano dS">Quevedo</a>
-      </li>
+        <li class="nav-item page-info page-link">
+          <a class="nav-link" data-page="Stefano dS">Quevedo</a>
+        </li>
 
-    </ul>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container">
+
+    <div class="page" id="home">
+      <h1>Hello world</h1>
+    </div>
+
+    <div class="page" id="info">
+      <h1>Info</h1>
+    </div>
+    <!-- Nouri HTML codes started here -->
+    <div class="page mt-5 p-5 highlightBackground" id="arash">
+      <div class="d-flex justify-content-between align-items-end">
+        <h1 class="mx-auto text-secondary">CERCA NEL TESTO</h1>
+        <!-- Toggle switch -->
+        <div class="d-flex flex-column" id="highlightCheckboxContainer">
+          <label class="highlightSwitch">
+            <input type="checkbox" id="highlightCheckbox">
+            <span class="highlightSlider highlightRound"></span>
+          </label>
+          <span href="#" class="badge badge-light">Delay</span>
+        </div>
+      </div>
+      <!-- Main text -->
+      <input class="w-100 p-2 mt-3" type="text" id="highlightInput" placeholder="Search">
+      <p class="mt-3 text-justify" id="mainSearchedParagraph">JavaScript is a scripting or programming language that allows you
+        to implement complex features on web pages. Every time a web page does more than just sit there and display static information for you to look at displaying timely content updates, interactive maps, animated 2D/3D graphics, scrolling video jukeboxes, etc. you can bet that JavaScript is probably involved. It is the third layer of the layer cake of standard web technologies, two of which (HTML and CSS) we have covered in much more detail in other parts of the Learning Area.</p>
+        <!-- result line -->
+      <p class="repeatText" hidden>Text(word) founded: <span id="textRepeatedTime"></span> time(s), Highlight color: <span
+          id="textHighlightColor"></span></p>
+    </div>
   </div>
-</nav>
-
-<div class="container">
-
-  <div class="page" id="home">
-    <h1>Hello world</h1>
-  </div>
-
-  <div class="page" id="info">
-    <h1>Info</h1>
-  </div>
+  <!-- Nouri HTML codes fineshed here -->
 
 
   <div class="table-container"></div>
 
-</div>
+  </div>
 
   <script src="main.js"></script>
 </body>
+
 </html>
