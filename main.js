@@ -135,3 +135,9 @@ function nouriScripts() {
 
 nouriScripts();
 /* Nouri scripts finished here */
+
+
+
+/* INIZIA CODICE JS DI DAVIDE ANDREANA */
+
+/* FINISCE CODICE JS DI DAVIDE ANDREANA */
