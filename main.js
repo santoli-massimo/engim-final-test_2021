@@ -141,3 +141,53 @@ nouriScripts();
 /* INIZIA CODICE JS DI DAVIDE ANDREANA */
 
 /* FINISCE CODICE JS DI DAVIDE ANDREANA */
+
+//Inizia il codice di Luca Tabbia
+let campoSantoliTbody= document.querySelector("#campo-santoli-tbody");
+let campoSantoliTbodyCover= document.querySelector("#campo-santoli-tbody-cover")
+let campoSantoliStart= document.querySelector("#send-creation-table");
+
+//creazione delle tabelle sovrapposte
+campoSantoliStart.addEventListener('click', function (e) {
+  e.preventDefault()
+  let colsAndRows= document.querySelector("#number-of-cells").value
+  //creazione tabella con i numeri e le mine
+  let indiceRiga=0
+  for(let i=0; i<colsAndRows; i++){
+    let tableRowCs= document.createElement("tr")
+    let indiceCella=0
+    for(let j=0;j<colsAndRows;j++){
+      let mapcell= document.createElement("td")
+      mapcell.classList.add("cs-cell")
+      mapcell.id= indiceRiga+""+indiceCella+"index-cell"
+      mapcell.appendChild(document.createTextNode('1'))
+      tableRowCs.appendChild(mapcell)
+    }
+    campoSantoliTbody.appendChild(tableRowCs)
+  }
+  //creazione tabella che copre la prima
+  let indiceRigaCover=0
+  for(let i=0; i<colsAndRows; i++){
+    let tableRowCscover= document.createElement("tr")
+    let indiceCella=0
+    for(let j=0;j<colsAndRows;j++){
+      let mapcellcover= document.createElement("td")
+      mapcellcover.addEventListener('click', function(no_show){
+        this.style.backgroundColor= "transparent"
+      })
+      mapcellcover.classList.add("cs-cell-cover")
+      mapcellcover.id=indiceRigaCover+""+indiceCella+"index-cell-cover"
+      tableRowCscover.appendChild(mapcellcover)
+      indiceCella++
+    }
+    indiceRiga++
+    campoSantoliTbodyCover.appendChild(tableRowCscover)
+  }
+
+})
+
+//
+function showNone(no_show){
+  no_show.target.style.display= "none"
+}
+
