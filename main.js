@@ -160,10 +160,16 @@ campoSantoliStart.addEventListener('click', function (e) {
       let mapcell= document.createElement("td")
       mapcell.classList.add("cs-cell")
       mapcell.id= indiceRiga+""+indiceCella+"index-cell"
-      mapcell.appendChild(document.createTextNode('1'))
+      if(randomNumberForCs()==0){
+        mapcell.innerHTML= "0"
+      }else {
+        mapcell.innerHTML= "<i class='fas fa-syringe'></i>"
+      }
       tableRowCs.appendChild(mapcell)
+      indiceCella++
     }
     campoSantoliTbody.appendChild(tableRowCs)
+    indiceRiga++
   }
   //creazione tabella che copre la prima
   let indiceRigaCover=0
@@ -180,14 +186,67 @@ campoSantoliStart.addEventListener('click', function (e) {
       tableRowCscover.appendChild(mapcellcover)
       indiceCella++
     }
-    indiceRiga++
     campoSantoliTbodyCover.appendChild(tableRowCscover)
+    indiceRiga++
   }
+  //gestione dei valori randomici
+  getRealNumberForCs(0,0)
 
 })
 
-//
-function showNone(no_show){
-  no_show.target.style.display= "none"
+//generazione numeri randomici
+function randomNumberForCs(){
+  let n=Math.floor(Math.random()*(9-0))+ 0
+  if(n<8){
+    return 0
+  }else {
+    return 10
+  }
 }
 
+//funzione per calcolare vicinanza alla cura
+function getRealNumberForCs(riga, colonna){
+  let colsAndRows= document.querySelector("#number-of-cells").value -1
+
+  if(parseInt(document.getElementById(riga+""+colonna+"index-cell").innerHTML) ==0){ 
+    let counter=0
+    if(riga<colsAndRows && isNaN(parseInt(document.getElementById((riga+1)+""+colonna+"index-cell").innerHTML))){
+      counter+=1
+      document.getElementById(riga+""+colonna+"index-cell").innerHTML= counter
+    }
+    if(colonna<colsAndRows && isNaN(parseInt(document.getElementById(riga+""+(colonna+1)+"index-cell").innerHTML))){
+      counter+=1
+      document.getElementById(riga+""+colonna+"index-cell").innerHTML= counter
+    }
+    if(riga>0 && isNaN(parseInt(document.getElementById((riga-1)+""+colonna+"index-cell").innerHTML))){
+      counter+=1
+      document.getElementById(riga+""+colonna+"index-cell").innerHTML= counter
+    }
+    if(colonna>0 && isNaN(parseInt(document.getElementById(riga+""+(colonna-1)+"index-cell").innerHTML))){
+      counter+=1
+      document.getElementById(riga+""+colonna+"index-cell").innerHTML= counter
+    }
+    if(riga<colsAndRows && colonna<colsAndRows && isNaN(parseInt(document.getElementById((riga+1)+""+(colonna+1)+"index-cell").innerHTML))){
+      counter+=1
+      document.getElementById(riga+""+colonna+"index-cell").innerHTML= counter
+    }
+    if(riga<colsAndRows && colonna>0 && isNaN((document.getElementById((riga+1)+""+(colonna-1)+"index-cell").innerHTML))){
+        counter+=1
+        document.getElementById(riga+""+colonna+"index-cell").innerHTML= counter
+    }
+    if(riga>0 && colonna>0 && isNaN((document.getElementById((riga-1)+""+(colonna-1)+"index-cell").innerHTML))){
+        counter+=1
+        document.getElementById(riga+""+colonna+"index-cell").innerHTML= counter
+    }
+    if(riga>0 && colonna<colsAndRows && isNaN(parseInt(document.getElementById((riga-1)+""+(colonna+1)+"index-cell").innerHTML))){
+      counter+=1
+      document.getElementById(riga+""+colonna+"index-cell").innerHTML= counter
+    }
+  }
+  if(colonna<colsAndRows){
+    getRealNumberForCs(riga, colonna+1)
+  }
+  if(riga<colsAndRows){
+    getRealNumberForCs(riga+1, colonna)
+  }
+}
