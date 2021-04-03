@@ -143,61 +143,120 @@ nouriScripts();
 /* FINISCE CODICE JS DI DAVIDE ANDREANA */
 
 //Inizia il codice di Luca Tabbia
-let campoSantoliTbody= document.querySelector("#campo-santoli-tbody");
+let campoSantoliTbody= document.querySelector("#campo-santoli-tbody")
 let campoSantoliTbodyCover= document.querySelector("#campo-santoli-tbody-cover")
-let campoSantoliStart= document.querySelector("#send-creation-table");
+let campoSantoliStart= document.querySelector("#send-creation-table")
+let campoSantoliLost= document.querySelector("#cs-h2-lost")
+let campoSantoliLostTimes= 0
+let campoSantoliWinTimes= 0
 
 //creazione delle tabelle sovrapposte
-campoSantoliStart.addEventListener('click', function (e) {
+campoSantoliStart.addEventListener('click', function(e){
   e.preventDefault()
+  campoSantoliTbody.innerHTML= ''
+  campoSantoliTbodyCover.innerHTML= ''
+  createTablesCs()
+})
+
+//funzione per la creazione di tabelle
+
+function createTablesCs(){
+  if(campoSantoliStart.innerHTML=="Riprova!"){
+    campoSantoliLost.style.visibility= "hidden" 
+    campoSantoliTbodyCover.style.visibility= "visible"
+  }
   let colsAndRows= document.querySelector("#number-of-cells").value
   //creazione tabella con i numeri e le mine
-  let indiceRiga=0
+  let rowIndex=0
   for(let i=0; i<colsAndRows; i++){
     let tableRowCs= document.createElement("tr")
-    let indiceCella=0
+    let cellindex=0
     for(let j=0;j<colsAndRows;j++){
       let mapcell= document.createElement("td")
       mapcell.classList.add("cs-cell")
-      mapcell.id= indiceRiga+""+indiceCella+"index-cell"
+      mapcell.id= rowIndex+""+cellindex+"index-cell"
       if(randomNumberForCs()==0){
         mapcell.innerHTML= "0"
       }else {
         mapcell.innerHTML= "<i class='fas fa-syringe'></i>"
       }
       tableRowCs.appendChild(mapcell)
-      indiceCella++
+      cellindex++
     }
     campoSantoliTbody.appendChild(tableRowCs)
-    indiceRiga++
+    rowIndex++
   }
   //creazione tabella che copre la prima
-  let indiceRigaCover=0
+  let rowIndexCover=0
   for(let i=0; i<colsAndRows; i++){
     let tableRowCscover= document.createElement("tr")
-    let indiceCella=0
+    let cellIndex=0
     for(let j=0;j<colsAndRows;j++){
       let mapcellcover= document.createElement("td")
-      mapcellcover.addEventListener('click', function(no_show){
-        this.style.backgroundColor= "transparent"
+      mapcellcover.addEventListener('click', noShow, false)
+      mapcellcover.addEventListener('contextmenu', function(e){
+        e.preventDefault()
+        this.style.backgroundColor= "red"
       })
       mapcellcover.classList.add("cs-cell-cover")
-      mapcellcover.id=indiceRigaCover+""+indiceCella+"index-cell-cover"
+      mapcellcover.id=rowIndexCover+""+cellIndex+"index-cell-cover"
       tableRowCscover.appendChild(mapcellcover)
-      indiceCella++
+      cellIndex++
     }
     campoSantoliTbodyCover.appendChild(tableRowCscover)
-    indiceRiga++
+    rowIndexCover++
   }
   //gestione dei valori randomici
   getRealNumberForCs(0,0)
 
-})
+}
+
+//funzione per nascondere le celle di copertura
+function noShow(){
+  this.style.visibility= "hidden"
+  let colsAndRows= document.querySelector("#number-of-cells").value -1
+  let id= this.id
+  let idNumberLimit= id.search("index")
+  let idNumber= id.slice(0, idNumberLimit)
+  let rowIndex= parseInt(idNumber.slice(0, idNumber.length/2))
+  let colIndex= parseInt(idNumber.slice(idNumber.length/2, idNumber.length))
+  if(isNaN(parseInt(document.getElementById(rowIndex+""+colIndex+"index-cell").innerHTML))){
+    youLostCs()
+  }
+  if(parseInt(document.getElementById(rowIndex+""+colIndex+"index-cell").innerHTML)== 0){
+    if(rowIndex>0){
+      document.getElementById((rowIndex-1)+""+colIndex+"index-cell-cover").click();
+    }
+    if(colIndex>0){
+      document.getElementById(rowIndex+""+(colIndex-1)+"index-cell-cover").click();
+    }
+    if(rowIndex<colsAndRows){
+      document.getElementById((rowIndex+1)+""+colIndex+"index-cell-cover").click();
+    }
+    if(colIndex<colsAndRows){
+      document.getElementById(rowIndex+""+(colIndex+1)+"index-cell-cover").click();
+    }
+  }
+}
+
+//funzione che gestisce il fallimento
+function youLostCs(){
+  campoSantoliTbodyCover.style.visibility= "hidden"
+  campoSantoliStart.innerHTML= "Riprova!"
+  campoSantoliLost.style.visibility= "visible"
+  let youLostLabel= document.getElementById("label-volte-perse-cs")
+  youLostLabel.style.visibility= "visible"
+  let youLostTimes= document.getElementById("volte-perse-cs")
+  campoSantoliLostTimes+= 1
+  youLostTimes.innerHTML= campoSantoliLostTimes + " volte"
+  youLostTimes.style.visibility= "visible"
+}
+
 
 //generazione numeri randomici
 function randomNumberForCs(){
-  let n=Math.floor(Math.random()*(9-0))+ 0
-  if(n<8){
+  let n=Math.floor(Math.random()*(10-0))+ 0
+  if(n<9){
     return 0
   }else {
     return 10
