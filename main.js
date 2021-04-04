@@ -157,6 +157,8 @@ campoSantoliStart.addEventListener('click', function(e){
   e.preventDefault()
   campoSantoliTbody.innerHTML= ''
   campoSantoliTbodyCover.innerHTML= ''
+  safeCellsClicked=0
+  safeCells=0
   //creazione tabelle
   createTablesCs()
   //gestione dei valori randomici
@@ -169,10 +171,14 @@ function createTablesCs(){
   if(campoSantoliStart.innerHTML=="Riprova!"){
     campoSantoliStatement.style.visibility= "hidden" 
     campoSantoliTbodyCover.style.visibility= "visible"
-    safeCellsClicked=0
-    safeCells=0
   }
   let difficulty= difficultyForCs()
+  if(document.querySelector("#number-of-cells").value<10){
+    document.querySelector("#number-of-cells").value=10
+  }
+  if(document.querySelector("#number-of-cells").value>200){
+    document.querySelector("#number-of-cells").value=200
+  }
   let colsAndRows= document.querySelector("#number-of-cells").value
   //creazione tabella con i numeri e le mine
   for(let i=0; i<colsAndRows; i++){
@@ -286,7 +292,12 @@ function youLostCs(){
   youLostLabel.style.visibility= "visible"
   let youLostTimes= document.getElementById("times-lost-cs")
   campoSantoliLostTimes+= 1
-  youLostTimes.innerHTML= campoSantoliLostTimes + " volte"
+  if(campoSantoliLostTimes==1){
+    youLostTimes.innerHTML= campoSantoliLostTimes + " volta"
+  }
+  else{
+    youLostTimes.innerHTML= campoSantoliLostTimes + " volte"
+  }
   youLostTimes.style.visibility= "visible"
 }
 
@@ -301,7 +312,12 @@ function youWinCs(){
   youWinLabel.style.visibility= "visible"
   let youWinTimes= document.getElementById("times-win-cs")
   campoSantoliWinTimes+= 1
-  youWinTimes.innerHTML= campoSantoliWinTimes + " volte"
+  if(campoSantoliWinTimes==1){
+  youWinTimes.innerHTML= campoSantoliWinTimes + " volta"
+  }
+  else{
+    youWinTimes.innerHTML= campoSantoliWinTimes + " volte"
+  }
   youWinTimes.style.visibility= "visible"
 }
 
