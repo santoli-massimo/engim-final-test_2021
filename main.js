@@ -146,166 +146,239 @@ nouriScripts();
 let campoSantoliTbody= document.querySelector("#campo-santoli-tbody")
 let campoSantoliTbodyCover= document.querySelector("#campo-santoli-tbody-cover")
 let campoSantoliStart= document.querySelector("#send-creation-table")
-let campoSantoliLost= document.querySelector("#cs-h2-lost")
+let campoSantoliStatement= document.querySelector("#cs-h2-statement")
 let campoSantoliLostTimes= 0
 let campoSantoliWinTimes= 0
+let safeCells= 0
+let safeCellsClicked=0
 
 //creazione delle tabelle sovrapposte
 campoSantoliStart.addEventListener('click', function(e){
   e.preventDefault()
   campoSantoliTbody.innerHTML= ''
   campoSantoliTbodyCover.innerHTML= ''
+  //creazione tabelle
   createTablesCs()
+  //gestione dei valori randomici
+  getRealNumberForCs()
 })
 
 //funzione per la creazione di tabelle
 
 function createTablesCs(){
   if(campoSantoliStart.innerHTML=="Riprova!"){
-    campoSantoliLost.style.visibility= "hidden" 
+    campoSantoliStatement.style.visibility= "hidden" 
     campoSantoliTbodyCover.style.visibility= "visible"
   }
+  let difficulty= difficultyForCs()
   let colsAndRows= document.querySelector("#number-of-cells").value
   //creazione tabella con i numeri e le mine
-  let rowIndex=0
   for(let i=0; i<colsAndRows; i++){
     let tableRowCs= document.createElement("tr")
-    let cellindex=0
     for(let j=0;j<colsAndRows;j++){
       let mapcell= document.createElement("td")
       mapcell.classList.add("cs-cell")
-      mapcell.id= rowIndex+""+cellindex+"index-cell"
-      if(randomNumberForCs()==0){
+      mapcell.id= i+"-"+j+"index-cell"
+      if(randomNumberForCs(difficulty)==0){
         mapcell.innerHTML= "0"
+        safeCells +=1
       }else {
         mapcell.innerHTML= "<i class='fas fa-syringe'></i>"
       }
       tableRowCs.appendChild(mapcell)
-      cellindex++
     }
     campoSantoliTbody.appendChild(tableRowCs)
-    rowIndex++
   }
   //creazione tabella che copre la prima
-  let rowIndexCover=0
+  
   for(let i=0; i<colsAndRows; i++){
     let tableRowCscover= document.createElement("tr")
-    let cellIndex=0
     for(let j=0;j<colsAndRows;j++){
       let mapcellcover= document.createElement("td")
-      mapcellcover.addEventListener('click', noShow, false)
+      mapcellcover.addEventListener('click', function(){
+        let id= this.id
+        if(noShowForCs(id)==0){
+          youLostCs()
+          safeCellsClicked=0
+        }
+        if(noShowForCs(id)==1){
+          safeCellsClicked+=1
+        }
+        if(safeCellsClicked==safeCells){
+          youWinCs()
+          safeCellsClicked=0
+          safeCells=0
+        }
+      })
       mapcellcover.addEventListener('contextmenu', function(e){
         e.preventDefault()
         this.style.backgroundColor= "red"
       })
       mapcellcover.classList.add("cs-cell-cover")
-      mapcellcover.id=rowIndexCover+""+cellIndex+"index-cell-cover"
+      mapcellcover.id=i+"-"+j+"index-cell-cover"
       tableRowCscover.appendChild(mapcellcover)
-      cellIndex++
     }
     campoSantoliTbodyCover.appendChild(tableRowCscover)
-    rowIndexCover++
   }
-  //gestione dei valori randomici
-  getRealNumberForCs(0,0)
-
 }
+
+
+//funzione per difficoltà
+function difficultyForCs(){
+  if(document.querySelector("#easy-difficulty-cs").checked){
+    return document.querySelector("#easy-difficulty-cs").value
+  }
+  if(document.querySelector("#medium-difficulty-cs").checked){
+    return document.querySelector("#medium-difficulty-cs").value
+  }
+  if(document.querySelector("#hard-difficulty-cs").checked){
+    return document.querySelector("#hard-difficulty-cs").value
+  }
+}
+
 
 //funzione per nascondere le celle di copertura
-function noShow(){
-  this.style.visibility= "hidden"
-  let colsAndRows= document.querySelector("#number-of-cells").value -1
-  let id= this.id
-  let idNumberLimit= id.search("index")
-  let idNumber= id.slice(0, idNumberLimit)
-  let rowIndex= parseInt(idNumber.slice(0, idNumber.length/2))
-  let colIndex= parseInt(idNumber.slice(idNumber.length/2, idNumber.length))
-  if(isNaN(parseInt(document.getElementById(rowIndex+""+colIndex+"index-cell").innerHTML))){
-    youLostCs()
+function noShowForCs(id){
+  document.getElementById(id).style.visibility= "hidden"
+  let rowIndex= parseInt(id.slice(0, id.search("-")))
+  let colIndex= parseInt(id.slice((id.search("-")+1), id.search("index")))
+  
+  if(isNaN(parseInt(document.getElementById(rowIndex+"-"+colIndex+"index-cell").innerHTML))){
+    return 0
   }
-  if(parseInt(document.getElementById(rowIndex+""+colIndex+"index-cell").innerHTML)== 0){
+  else{
+    return 1
+  }
+  /*if(parseInt(document.getElementById(rowIndex+"-"+colIndex+"index-cell").innerHTML)== 0){
     if(rowIndex>0){
-      document.getElementById((rowIndex-1)+""+colIndex+"index-cell-cover").click();
+      setTimeout(function(){
+        document.getElementById((rowIndex-1)+"-"+colIndex+"index-cell-cover").click();
+      })
     }
     if(colIndex>0){
-      document.getElementById(rowIndex+""+(colIndex-1)+"index-cell-cover").click();
+      setTimeout(function(){
+        document.getElementById(rowIndex+"-"+(colIndex-1)+"index-cell-cover").click();
+      })
     }
-    if(rowIndex<colsAndRows){
-      document.getElementById((rowIndex+1)+""+colIndex+"index-cell-cover").click();
+    if(rowIndex<document.querySelector("#number-of-cells").value-1){
+      setTimeout(function(){
+        document.getElementById((rowIndex+1)+"-"+colIndex+"index-cell-cover").click();
+      })
     }
-    if(colIndex<colsAndRows){
-      document.getElementById(rowIndex+""+(colIndex+1)+"index-cell-cover").click();
+    if(colIndex<document.querySelector("#number-of-cells").value-1){
+      setTimeout(function(){
+        document.getElementById(rowIndex+"-"+(colIndex+1)+"index-cell-cover").click();
+      })
     }
-  }
+  }*/
 }
+
+
 
 //funzione che gestisce il fallimento
 function youLostCs(){
   campoSantoliTbodyCover.style.visibility= "hidden"
   campoSantoliStart.innerHTML= "Riprova!"
-  campoSantoliLost.style.visibility= "visible"
-  let youLostLabel= document.getElementById("label-volte-perse-cs")
+  campoSantoliStatement.innerHTML= "Hai perso!"
+  campoSantoliStatement.style.color= "red"
+  campoSantoliStatement.style.visibility= "visible"
+  let youLostLabel= document.getElementById("label-times-lost-cs")
   youLostLabel.style.visibility= "visible"
-  let youLostTimes= document.getElementById("volte-perse-cs")
+  let youLostTimes= document.getElementById("times-lost-cs")
   campoSantoliLostTimes+= 1
   youLostTimes.innerHTML= campoSantoliLostTimes + " volte"
   youLostTimes.style.visibility= "visible"
 }
 
 
+function youWinCs(){
+  campoSantoliTbodyCover.style.visibility= "hidden"
+  campoSantoliStart.innerHTML= "Riprova!"
+  campoSantoliStatement.innerHTML= "Hai vinto!"
+  campoSantoliStatement.style.color= "limegreen"
+  campoSantoliStatement.style.visibility= "visible"
+  let youWinLabel= document.getElementById("label-times-win-cs")
+  youWinLabel.style.visibility= "visible"
+  let youWinTimes= document.getElementById("times-win-cs")
+  campoSantoliWinTimes+= 1
+  youWinTimes.innerHTML= campoSantoliWinTimes + " volte"
+  youWinTimes.style.visibility= "visible"
+}
+
+
 //generazione numeri randomici
-function randomNumberForCs(){
-  let n=Math.floor(Math.random()*(10-0))+ 0
-  if(n<9){
-    return 0
-  }else {
-    return 10
+function randomNumberForCs(value){
+  let n= 0
+  switch(value){
+    case "easy":
+      n=Math.floor(Math.random()*(11-0))+ 0
+      if(n<10){
+        return 0
+      }else {
+        return 10
+      }
+    case "medium":
+      n=Math.floor(Math.random()*(9-0))+ 0
+      if(n<8){
+        return 0
+      }else {
+        return 10
+      }
+    case "hard":
+      n=Math.floor(Math.random()*(7-0))+ 0
+      if(n<6){
+        return 0
+      }else {
+        return 10
+      }
+    default:
+      console.log("errore")
+      break
   }
 }
 
-//funzione per calcolare vicinanza alla cura
-function getRealNumberForCs(riga, colonna){
-  let colsAndRows= document.querySelector("#number-of-cells").value -1
 
-  if(parseInt(document.getElementById(riga+""+colonna+"index-cell").innerHTML) ==0){ 
-    let counter=0
-    if(riga<colsAndRows && isNaN(parseInt(document.getElementById((riga+1)+""+colonna+"index-cell").innerHTML))){
-      counter+=1
-      document.getElementById(riga+""+colonna+"index-cell").innerHTML= counter
+//funzione per calcolare vicinanza alla cura
+function getRealNumberForCs(){
+  let colsAndRows= document.querySelector("#number-of-cells").value -1
+  for(let i=0; i<=colsAndRows; i++){
+    for(let j=0; j<=colsAndRows; j++){
+      if(parseInt(document.getElementById(i+"-"+j+"index-cell").innerHTML) ==0){ 
+        
+        let counter=0
+        if(i<colsAndRows && isNaN(parseInt(document.getElementById((i+1)+"-"+j+"index-cell").innerHTML))){
+          counter+=1
+          document.getElementById(i+"-"+j+"index-cell").innerHTML= counter
+        }
+        if(j<colsAndRows && isNaN(parseInt(document.getElementById(i+"-"+(j+1)+"index-cell").innerHTML))){
+          counter+=1
+          document.getElementById(i+"-"+j+"index-cell").innerHTML= counter
+        }
+        if(i>0 && isNaN(parseInt(document.getElementById((i-1)+"-"+j+"index-cell").innerHTML))){
+          counter+=1
+          document.getElementById(i+"-"+j+"index-cell").innerHTML= counter
+        }
+        if(j>0 && isNaN(parseInt(document.getElementById(i+"-"+(j-1)+"index-cell").innerHTML))){
+          counter+=1
+          document.getElementById(i+"-"+j+"index-cell").innerHTML= counter
+        }
+        if(i<colsAndRows && j<colsAndRows && isNaN(parseInt(document.getElementById((i+1)+"-"+(j+1)+"index-cell").innerHTML))){
+          counter+=1
+          document.getElementById(i+"-"+j+"index-cell").innerHTML= counter
+        }
+        if(i<colsAndRows && j>0 && isNaN((document.getElementById((i+1)+"-"+(j-1)+"index-cell").innerHTML))){
+            counter+=1
+            document.getElementById(i+"-"+j+"index-cell").innerHTML= counter
+        }
+        if(i>0 && j>0 && isNaN((document.getElementById((i-1)+"-"+(j-1)+"index-cell").innerHTML))){
+            counter+=1
+            document.getElementById(i+"-"+j+"index-cell").innerHTML= counter
+        }
+        if(i>0 && j<colsAndRows && isNaN(parseInt(document.getElementById((i-1)+"-"+(j+1)+"index-cell").innerHTML))){
+          counter+=1
+          document.getElementById(i+"-"+j+"index-cell").innerHTML= counter
+        }
+      }
     }
-    if(colonna<colsAndRows && isNaN(parseInt(document.getElementById(riga+""+(colonna+1)+"index-cell").innerHTML))){
-      counter+=1
-      document.getElementById(riga+""+colonna+"index-cell").innerHTML= counter
-    }
-    if(riga>0 && isNaN(parseInt(document.getElementById((riga-1)+""+colonna+"index-cell").innerHTML))){
-      counter+=1
-      document.getElementById(riga+""+colonna+"index-cell").innerHTML= counter
-    }
-    if(colonna>0 && isNaN(parseInt(document.getElementById(riga+""+(colonna-1)+"index-cell").innerHTML))){
-      counter+=1
-      document.getElementById(riga+""+colonna+"index-cell").innerHTML= counter
-    }
-    if(riga<colsAndRows && colonna<colsAndRows && isNaN(parseInt(document.getElementById((riga+1)+""+(colonna+1)+"index-cell").innerHTML))){
-      counter+=1
-      document.getElementById(riga+""+colonna+"index-cell").innerHTML= counter
-    }
-    if(riga<colsAndRows && colonna>0 && isNaN((document.getElementById((riga+1)+""+(colonna-1)+"index-cell").innerHTML))){
-        counter+=1
-        document.getElementById(riga+""+colonna+"index-cell").innerHTML= counter
-    }
-    if(riga>0 && colonna>0 && isNaN((document.getElementById((riga-1)+""+(colonna-1)+"index-cell").innerHTML))){
-        counter+=1
-        document.getElementById(riga+""+colonna+"index-cell").innerHTML= counter
-    }
-    if(riga>0 && colonna<colsAndRows && isNaN(parseInt(document.getElementById((riga-1)+""+(colonna+1)+"index-cell").innerHTML))){
-      counter+=1
-      document.getElementById(riga+""+colonna+"index-cell").innerHTML= counter
-    }
-  }
-  if(colonna<colsAndRows){
-    getRealNumberForCs(riga, colonna+1)
-  }
-  if(riga<colsAndRows){
-    getRealNumberForCs(riga+1, colonna)
   }
 }

@@ -176,15 +176,13 @@ h1 {
   border: 2px solid white;
   background-color: darkgray;
 }
-#cs-h2-lost{
+#cs-h2-statement{
   position: absolute;
   width: 30%;
   height: 20%;
   top: 40%;
   left: 35%;
   text-align: center;
-  color: red;
-  text-shadow: 1px 1px darkred;
   z-index: 100;
   visibility: hidden;
 }
@@ -197,9 +195,6 @@ h1 {
 }
 .hidden-number-times:first{
   margin-top: 40px;
-}
-.hidden-number-times:last-of-type{
-  margin-bottom: 40px;
 }
 #cs-form-menù{
   padding-top: 30px;

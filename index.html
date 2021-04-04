@@ -104,7 +104,7 @@
     <div class="page" id="luca-tabbia">
       <div class="container-fluid justify-content-center">
         <div id="container-campo-santoli">
-          <h2 id="cs-h2-lost">Hai perso!</h2>
+          <h2 id="cs-h2-statement"></h2>
           <div class="row border border-light">
             <div class="col text-center bg-dark text-light">
               <h3>Campo Santoli!</h3>
@@ -129,12 +129,19 @@
             </div>
             <div class="col-3 text-center border border-light">
               <form id="cs-form-menù">
-                <label for="number-of-cells">Quante colonne e righe vuoi?</label><br>
-                <input type="number" name="number-of-cells" id="number-of-cells"><br><br>
-                <h4 class="hidden-number-times" id="label-volte-vinte-cs">Hai vinto:</h4>
-                <h5 class="hidden-number-times" id="volte-vinte-cs"></h5>
-                <h4 class="hidden-number-times" id="label-volte-perse-cs">Hai perso:</h4>
-                <h5 class="hidden-number-times" id="volte-perse-cs"></h5>
+                <label for="number-of-cells">Quante colonne e righe vuoi?<br>(numero consigliato da 10 a 200)</label><br>
+                <input type="number" name="number-of-cells" id="number-of-cells" min="10" max="200" required><br><br>
+                <label for="difficulties">Seleziona la difficoltà:</label><br>
+                <input type="radio" id="easy-difficulty-cs" name="difficulties" value="easy" checked>
+                <label for="easy-difficulty-cs">Facile</label>
+                <input type="radio" id="medium-difficulty-cs" name="difficulties" value="medium">
+                <label for="medium-difficulty-cs">Intermedia</label>
+                <input type="radio" id="hard-difficulty-cs" name="difficulties" value="hard">
+                <label for="hard-difficulty-cs">Difficile</label><br><br>
+                <h4 class="hidden-number-times" id="label-times-win-cs">Hai vinto:</h4>
+                <h5 class="hidden-number-times" id="times-win-cs"></h5>
+                <h4 class="hidden-number-times" id="label-times-lost-cs">Hai perso:</h4>
+                <h5 class="hidden-number-times" id="times-lost-cs"></h5>
                 <p>Usa il click sinistro per svelare il contenuto della casella<br>
                 Usa il click destro per segnare una casella come pericolosa
                 </p>
