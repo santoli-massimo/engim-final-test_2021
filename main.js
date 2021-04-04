@@ -169,6 +169,8 @@ function createTablesCs(){
   if(campoSantoliStart.innerHTML=="Riprova!"){
     campoSantoliStatement.style.visibility= "hidden" 
     campoSantoliTbodyCover.style.visibility= "visible"
+    safeCellsClicked=0
+    safeCells=0
   }
   let difficulty= difficultyForCs()
   let colsAndRows= document.querySelector("#number-of-cells").value
@@ -206,8 +208,6 @@ function createTablesCs(){
         }
         if(safeCellsClicked==safeCells){
           youWinCs()
-          safeCellsClicked=0
-          safeCells=0
         }
       })
       mapcellcover.addEventListener('contextmenu', function(e){
