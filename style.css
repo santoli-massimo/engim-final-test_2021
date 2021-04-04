@@ -144,7 +144,6 @@ h1 {
   position: absolute;
   margin: 0 auto;
   margin-top: 20px;
-  margin-bottom: 20px;
   table-layout: fixed;
   width: 100%;
   }
@@ -158,21 +157,20 @@ h1 {
   position: absolute;
   margin: 0 auto;
   margin-top: 20px;
-  margin-bottom: 20px;
   table-layout: fixed;
   width: 100%;
   z-index: 100;
   }
 .cs-cell{
   height: 30px;
-  width: 30px;
+  width: 80px;
   border: 2px solid white;
   background-color: black;
   text-align: center;
 }
 .cs-cell-cover{
   height: 30px;
-  width: 30px;
+  width: 80px;
   border: 2px solid white;
   background-color: darkgray;
 }

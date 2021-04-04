@@ -188,7 +188,7 @@ function createTablesCs(){
       mapcell.classList.add("cs-cell")
       mapcell.id= i+"-"+j+"index-cell"
       if(randomNumberForCs(difficulty)==0){
-        mapcell.innerHTML= "0"
+        mapcell.innerHTML= ""
         safeCells +=1
       }else {
         mapcell.innerHTML= "<i class='fas fa-syringe'></i>"
@@ -208,8 +208,7 @@ function createTablesCs(){
         if(noShowForCs(id)==0){
           youLostCs()
           safeCellsClicked=0
-        }
-        if(noShowForCs(id)==1){
+        }else{
           safeCellsClicked+=1
         }
         if(safeCellsClicked==safeCells){
@@ -218,7 +217,11 @@ function createTablesCs(){
       })
       mapcellcover.addEventListener('contextmenu', function(e){
         e.preventDefault()
-        this.style.backgroundColor= "red"
+        if(this.innerHTML== ""){
+          this.innerHTML= "<i class='fas fa-hospital'></i>"
+        }else{
+          this.innerHTML= ""
+        }
       })
       mapcellcover.classList.add("cs-cell-cover")
       mapcellcover.id=i+"-"+j+"index-cell-cover"
@@ -248,8 +251,7 @@ function noShowForCs(id){
   document.getElementById(id).style.visibility= "hidden"
   let rowIndex= parseInt(id.slice(0, id.search("-")))
   let colIndex= parseInt(id.slice((id.search("-")+1), id.search("index")))
-  
-  if(isNaN(parseInt(document.getElementById(rowIndex+"-"+colIndex+"index-cell").innerHTML))){
+  if(document.getElementById(rowIndex+"-"+colIndex+"index-cell").innerHTML=='<i class="fas fa-syringe"></i>'){
     return 0
   }
   else{
@@ -327,8 +329,8 @@ function randomNumberForCs(value){
   let n= 0
   switch(value){
     case "easy":
-      n=Math.floor(Math.random()*(11-0))+ 0
-      if(n<10){
+      n=Math.floor(Math.random()*(12-0))+ 0
+      if(n<11){
         return 0
       }else {
         return 10
@@ -341,8 +343,8 @@ function randomNumberForCs(value){
         return 10
       }
     case "hard":
-      n=Math.floor(Math.random()*(7-0))+ 0
-      if(n<6){
+      n=Math.floor(Math.random()*(6-0))+ 0
+      if(n<5){
         return 0
       }else {
         return 10
@@ -359,40 +361,58 @@ function getRealNumberForCs(){
   let colsAndRows= document.querySelector("#number-of-cells").value -1
   for(let i=0; i<=colsAndRows; i++){
     for(let j=0; j<=colsAndRows; j++){
-      if(parseInt(document.getElementById(i+"-"+j+"index-cell").innerHTML) ==0){ 
+      if(document.getElementById(i+"-"+j+"index-cell").innerHTML ==""){ 
         
         let counter=0
-        if(i<colsAndRows && isNaN(parseInt(document.getElementById((i+1)+"-"+j+"index-cell").innerHTML))){
+        if(i<colsAndRows && document.getElementById((i+1)+"-"+j+"index-cell").innerHTML=='<i class="fas fa-syringe"></i>'){
           counter+=1
-          document.getElementById(i+"-"+j+"index-cell").innerHTML= counter
         }
-        if(j<colsAndRows && isNaN(parseInt(document.getElementById(i+"-"+(j+1)+"index-cell").innerHTML))){
+        if(j<colsAndRows && document.getElementById(i+"-"+(j+1)+"index-cell").innerHTML=='<i class="fas fa-syringe"></i>'){
           counter+=1
-          document.getElementById(i+"-"+j+"index-cell").innerHTML= counter
         }
-        if(i>0 && isNaN(parseInt(document.getElementById((i-1)+"-"+j+"index-cell").innerHTML))){
+        if(i>0 && document.getElementById((i-1)+"-"+j+"index-cell").innerHTML=='<i class="fas fa-syringe"></i>'){
           counter+=1
-          document.getElementById(i+"-"+j+"index-cell").innerHTML= counter
         }
-        if(j>0 && isNaN(parseInt(document.getElementById(i+"-"+(j-1)+"index-cell").innerHTML))){
+        if(j>0 && document.getElementById(i+"-"+(j-1)+"index-cell").innerHTML=='<i class="fas fa-syringe"></i>'){
           counter+=1
-          document.getElementById(i+"-"+j+"index-cell").innerHTML= counter
         }
-        if(i<colsAndRows && j<colsAndRows && isNaN(parseInt(document.getElementById((i+1)+"-"+(j+1)+"index-cell").innerHTML))){
+        if(i<colsAndRows && j<colsAndRows && document.getElementById((i+1)+"-"+(j+1)+"index-cell").innerHTML=='<i class="fas fa-syringe"></i>'){
           counter+=1
-          document.getElementById(i+"-"+j+"index-cell").innerHTML= counter
         }
-        if(i<colsAndRows && j>0 && isNaN((document.getElementById((i+1)+"-"+(j-1)+"index-cell").innerHTML))){
-            counter+=1
-            document.getElementById(i+"-"+j+"index-cell").innerHTML= counter
-        }
-        if(i>0 && j>0 && isNaN((document.getElementById((i-1)+"-"+(j-1)+"index-cell").innerHTML))){
-            counter+=1
-            document.getElementById(i+"-"+j+"index-cell").innerHTML= counter
-        }
-        if(i>0 && j<colsAndRows && isNaN(parseInt(document.getElementById((i-1)+"-"+(j+1)+"index-cell").innerHTML))){
+        if(i<colsAndRows && j>0 && document.getElementById((i+1)+"-"+(j-1)+"index-cell").innerHTML=='<i class="fas fa-syringe"></i>'){
           counter+=1
-          document.getElementById(i+"-"+j+"index-cell").innerHTML= counter
+        }
+        if(i>0 && j>0 && document.getElementById((i-1)+"-"+(j-1)+"index-cell").innerHTML=='<i class="fas fa-syringe"></i>'){
+          counter+=1
+        }
+        if(i>0 && j<colsAndRows && document.getElementById((i-1)+"-"+(j+1)+"index-cell").innerHTML=='<i class="fas fa-syringe"></i>'){
+          counter+=1
+        }
+        switch (counter){
+          case 1:
+            document.getElementById(i+"-"+j+"index-cell").innerHTML='<i class="fas fa-user"></i>'
+            break
+          case 2:
+            document.getElementById(i+"-"+j+"index-cell").innerHTML='<i class="fas fa-user-friends"></i>'
+            break
+          case 3:
+            document.getElementById(i+"-"+j+"index-cell").innerHTML='<i class="fas fa-users"></i>'
+            break
+          case 4:
+            document.getElementById(i+"-"+j+"index-cell").innerHTML='<i class="fas fa-car"></i>'
+            break
+          case 5:
+            document.getElementById(i+"-"+j+"index-cell").innerHTML='<i class="fas fa-bus"></i>'
+            break
+          case 6:
+            document.getElementById(i+"-"+j+"index-cell").innerHTML='<i class="fas fa-store"></i>'
+            break
+          case 7:
+            document.getElementById(i+"-"+j+"index-cell").innerHTML='<i class="fas fa-building"></i>'
+            break
+          case 8:
+            document.getElementById(i+"-"+j+"index-cell").innerHTML='<i class="fas fa-church"></i>'
+            break
         }
       }
     }
