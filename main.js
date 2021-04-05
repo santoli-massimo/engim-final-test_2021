@@ -205,15 +205,15 @@ function createTablesCs(){
       let mapcellcover= document.createElement("td")
       mapcellcover.addEventListener('click', function(){
         let id= this.id
-        if(noShowForCs(id)==0){
-          youLostCs()
-          safeCellsClicked=0
-        }else{
+        if(document.getElementById(id.slice(0,id.search("-cover"))).innerHTML!='<i class="fas fa-syringe"></i>'){
           safeCellsClicked+=1
+        }else{
+          youLostCs()
         }
         if(safeCellsClicked==safeCells){
           youWinCs()
         }
+        noShowForCs(id)
       })
       mapcellcover.addEventListener('contextmenu', function(e){
         e.preventDefault()
@@ -251,34 +251,22 @@ function noShowForCs(id){
   document.getElementById(id).style.visibility= "hidden"
   let rowIndex= parseInt(id.slice(0, id.search("-")))
   let colIndex= parseInt(id.slice((id.search("-")+1), id.search("index")))
-  if(document.getElementById(rowIndex+"-"+colIndex+"index-cell").innerHTML=='<i class="fas fa-syringe"></i>'){
-    return 0
-  }
-  else{
-    return 1
-  }
-  /*if(parseInt(document.getElementById(rowIndex+"-"+colIndex+"index-cell").innerHTML)== 0){
-    if(rowIndex>0){
-      setTimeout(function(){
+  if(document.getElementById(rowIndex+"-"+colIndex+"index-cell").innerHTML!='<i class="fas fa-syringe"></i>'){
+    if(document.getElementById(rowIndex+"-"+colIndex+"index-cell").innerHTML== ''){
+      if(rowIndex>0 && document.getElementById((rowIndex-1)+"-"+colIndex+"index-cell-cover").style.visibility!= "hidden"){
         document.getElementById((rowIndex-1)+"-"+colIndex+"index-cell-cover").click();
-      })
-    }
-    if(colIndex>0){
-      setTimeout(function(){
+      }
+      if(colIndex>0 && document.getElementById(rowIndex+"-"+(colIndex-1)+"index-cell-cover").style.visibility!= "hidden"){
         document.getElementById(rowIndex+"-"+(colIndex-1)+"index-cell-cover").click();
-      })
-    }
-    if(rowIndex<document.querySelector("#number-of-cells").value-1){
-      setTimeout(function(){
+      }
+      if(rowIndex<document.querySelector("#number-of-cells").value-1 && document.getElementById((rowIndex+1)+"-"+colIndex+"index-cell-cover").style.visibility!= "hidden"){
         document.getElementById((rowIndex+1)+"-"+colIndex+"index-cell-cover").click();
-      })
-    }
-    if(colIndex<document.querySelector("#number-of-cells").value-1){
-      setTimeout(function(){
+      }
+      if(colIndex<document.querySelector("#number-of-cells").value-1 && document.getElementById(rowIndex+"-"+(colIndex+1)+"index-cell-cover").style.visibility!= "hidden"){
         document.getElementById(rowIndex+"-"+(colIndex+1)+"index-cell-cover").click();
-      })
+      }
     }
-  }*/
+  }
 }
 
 
