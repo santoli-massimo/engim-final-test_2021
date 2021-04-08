@@ -173,6 +173,7 @@ h1 {
   width: 80px;
   border: 2px solid white;
   background-color: darkgray;
+  color: black;
 }
 #cs-h2-statement{
   position: absolute;
