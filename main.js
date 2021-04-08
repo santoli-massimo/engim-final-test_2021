@@ -143,6 +143,8 @@ nouriScripts();
 /* FINISCE CODICE JS DI DAVIDE ANDREANA */
 
 //Inizia il codice di Luca Tabbia
+
+
 let campoSantoliTbody= document.querySelector("#campo-santoli-tbody")
 let campoSantoliTbodyCover= document.querySelector("#campo-santoli-tbody-cover")
 let campoSantoliStart= document.querySelector("#send-creation-table")
@@ -417,3 +419,5 @@ function getRealNumberForCs(){
     }
   }
 }
+
+//finisce il codice di Luca Tabbia
