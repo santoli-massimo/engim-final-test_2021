@@ -251,9 +251,7 @@ function difficultyForCs(){
 function noShowForCs(id){
   let arrayIdCs= [id.slice(0, id.search("-cover"))]
   document.getElementById(id).style.visibility= "hidden"
-  let limit= 0
   for(id of arrayIdCs){
-    limit+=1
     if(document.getElementById(id).innerHTML== ''){
       let rowIndex= parseInt(id.slice(0, id.search("-")))
       let colIndex= parseInt(id.slice((id.search("-")+1), id.search("index")))
