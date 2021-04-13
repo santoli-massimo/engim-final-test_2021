@@ -633,3 +633,65 @@ function sdsAlertDestory() {
 
 
 // Fine codice Stefano
+
+/* INIZIA IL CODICE DI GIULIO */
+
+function controlloGiulio() {
+  const pwd = document.getElementById("password");
+  const pwd2 = document.getElementById("password_2");
+  const errore = document.getElementById("errore-giulio");
+  const send = document.getElementById("invia");
+  const maiuscole = /[A-Z]/;
+  const minuscole = /[a-z]/;
+  const numeri = /[0-9]/;
+  const caratteri = /[!\@\#\$\%\^\&\*\(\)\_\-\+\=\<\,\>\?]/;
+
+  //funzione che esegue i vari controlli
+  function control(firstPassword, secondPassword) {
+      if (firstPassword !== secondPassword) {
+          errore.innerHTML = "**Le password non coincidono";
+          return;
+      }
+
+      if (firstPassword.length < 8) {
+          errore.innerHTML = "**La password deve essere almeno di 8 caratteri";
+          return;
+      }
+
+      if (!maiuscole.test(firstPassword)) {
+          errore.innerHTML = "**La password deve contenere almeno un carattere maiuscolo";
+          return;
+      }
+
+      if (!minuscole.test(firstPassword)) {
+          errore.innerHTML = "**La password deve contenere almeno un carattere minuscolo";
+          return;
+      }
+
+      if (!numeri.test(firstPassword)) {
+          errore.innerHTML = "**La password deve contenere almeno un numero";
+          return;
+      }
+
+      if (!caratteri.test(firstPassword)) {
+          errore.innerHTML = "**La password deve contenere almeno un carattere speciale";
+          return;
+      }
+      
+      // se la password coincide da messaggio di password corretta
+      errore.innerHTML = "PASSWORD CORRETTA";
+  }
+
+  // al click del mouse da la risposta
+  send.addEventListener('click',(event) => {
+      let firstPassword = pwd.value;
+      let secondPassword = pwd2.value;
+      event.preventDefault();
+      control(firstPassword, secondPassword);
+  })
+
+}
+
+controlloGiulio();
+
+/*FINISCE IL CODICE DI GIULIO */
