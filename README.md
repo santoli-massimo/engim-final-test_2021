@@ -110,7 +110,7 @@ Prevenire il cambio/ricaricamento della pagina al click del bottone.
 +5p creare un tasto reset che cancella tutti i campi del form.
 
 
-### Carousel (60p-75p) - PRENOTATO DA:
+### Carousel (60p-75p) - PRENOTATO DA: Riccardo Mareggiato
 Creare un div con dentro un immagine.
 L'immagine cambia ogni 3 secondi
 
