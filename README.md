@@ -449,3 +449,15 @@ Scrivete qui sotto gli esami che volte proporre con un titole e delle istruzioni
 se saranno approvati verranno spostati dal docente nella sezione sovrastante.
 Se siete gli autori dell'esame proposto potete prenotarlo in anticipo scriveno di vostro nome di fianco al titolo.
 
+### Il Gioco del 15  (Punteggio: ?) - PROPOSTO DA: OSCAR QUEVEDO
+Il gioco consiste di una tabellina di forma quadrata,  divisa in quattro righe e quattro 
+colonne (quindi 16 posizioni), su cui sono posizionate 15 tessere quadrate, numerate 
+progressivamente a partire da 1. Le tessere possono scorrere in orizzontale o verticale, 
+ma il loro spostamento è ovviamente limitato dall'esistenza di un singolo spazio vuoto. 
+Lo scopo del gioco è riordinare le tessere dopo averle "mescolate" in modo casuale (la posizione da raggiungere 
+è quella con il numero 1 in alto a sinistra e gli altri numeri a seguire da sinistra a destra e dall'alto in basso, 
+fino al 15 seguito dalla casella vuota).
+
+In questa versione creerò diversi livelli di dificolta, partendo da una versione del gioco 3 * 3 e finalizzando con 5 * 5; 
+in più vorrei proporre al giocatore un'opzione puzzle, in cui al posto dei numeri troverà un'immagine da riordinare.
+
