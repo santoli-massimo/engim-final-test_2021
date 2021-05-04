@@ -443,21 +443,22 @@ Il gioco si ferma quando uno dei 2 perde o se entrambi passano.
 +10p Far scegliere il numero di mazzi da usare ovvero quante copie di ogni carta saranno disponibili nell'array "mazzi"
 
 
+### Il Gioco del 15 (80p-100p) - PRENOTATO DA: OSCAR QUEVEDO
+Il gioco consiste in una griglia di forma quadrata, divisa in quattro righe e quattro
+colonne, su cui sono posizionate 15 tessere numerate progressivamente, ed uno slot vuoto. 
+Cliccando su una tessera adiacente allo slot vuoto, la tessera e lo slot vuoto si scambieranno di posizione.
+
+Il gioco comincia con le tessere presenti in ordine casuale. Lo scopo del gioco è riuscire a riordinare le tessere.
+
++10p Creare diversi livelli di difficoltà, a livello di difficoltà maggiore corrisponde un numero maggiore di tessere
+
++10p Creare una modalità aggiuntiva di gioco in cui ogni tessera è uno dei frammenti di un unica immagine. 
+In questo caso lo scopo sarà riordinare le tessete in modo che mostrino l'immagine originale.
+
 
 # ESAMI PROPOSTI DAGLI STUDENTI
-Scrivete qui sotto gli esami che volte proporre con un titole e delle istruzioni per lo svolgimento
+Scrivete qui sotto gli esami che volete proporre con un titole e delle istruzioni per lo svolgimento
 se saranno approvati verranno spostati dal docente nella sezione sovrastante.
 Se siete gli autori dell'esame proposto potete prenotarlo in anticipo scriveno di vostro nome di fianco al titolo.
 
-### Il Gioco del 15  (Punteggio: ?) - PROPOSTO DA: OSCAR QUEVEDO
-Il gioco consiste di una tabellina di forma quadrata,  divisa in quattro righe e quattro 
-colonne (quindi 16 posizioni), su cui sono posizionate 15 tessere quadrate, numerate 
-progressivamente a partire da 1. Le tessere possono scorrere in orizzontale o verticale, 
-ma il loro spostamento è ovviamente limitato dall'esistenza di un singolo spazio vuoto. 
-Lo scopo del gioco è riordinare le tessere dopo averle "mescolate" in modo casuale (la posizione da raggiungere 
-è quella con il numero 1 in alto a sinistra e gli altri numeri a seguire da sinistra a destra e dall'alto in basso, 
-fino al 15 seguito dalla casella vuota).
-
-In questa versione creerò diversi livelli di dificolta, partendo da una versione del gioco 3 * 3 e finalizzando con 5 * 5; 
-in più vorrei proporre al giocatore un'opzione puzzle, in cui al posto dei numeri troverà un'immagine da riordinare.
 
