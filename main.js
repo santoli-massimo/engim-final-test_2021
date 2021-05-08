@@ -702,6 +702,8 @@ controlloGiulio();
 
 
 <!----------------- FERRERO SCRIPT STARTS HERE ----------------->
+let setDuration = 90;
+
 /**** generate random number ****/
 let secretNumber = Math.trunc(Math.random() * 100) + 1;
 document.querySelector('.number').textContent = secretNumber;
@@ -711,7 +713,7 @@ document.querySelector('.number').textContent = secretNumber;
 document.querySelector('.start').addEventListener('click', function () {
     document.querySelector('.time').textContent = ``;
 
-    countdown(10, document.querySelector('.time'));
+    countdown(setDuration, document.querySelector('.time'));
     document.querySelector(".start").disabled = true;
     document.querySelector(".check").disabled = false;
 
@@ -756,5 +758,46 @@ function countdown(duration, show) {
         }
     }, 1000);
 }
+
+
+/**** difficulty settings ****/
+document.querySelector('.difficulty').addEventListener('click', function () {
+    document.querySelector(".easy").hidden = false;
+    document.querySelector(".medium").hidden = false;
+    document.querySelector(".difficult").hidden = false;
+});
+
+document.querySelector('.easy').addEventListener('click', function () {
+    document.querySelector(".easy").hidden = true;
+    document.querySelector(".medium").hidden = true;
+    document.querySelector(".difficult").hidden = true;
+    document.querySelector(".difficulty").style.backgroundColor = "yellowgreen";
+    setDuration = 180;
+});
+
+document.querySelector('.medium').addEventListener('click', function () {
+    document.querySelector(".easy").hidden = true;
+    document.querySelector(".medium").hidden = true;
+    document.querySelector(".difficult").hidden = true;
+    document.querySelector(".difficulty").style.backgroundColor = "darkorange";
+    setDuration = 90;
+});
+
+document.querySelector('.difficult').addEventListener('click', function () {
+    document.querySelector(".easy").hidden = true;
+    document.querySelector(".medium").hidden = true;
+    document.querySelector(".difficult").hidden = true;
+    document.querySelector(".difficulty").style.backgroundColor = "orangered";
+    setDuration = 30;
+});
+
+
+/**** tries counter ****/
+let clicks = 0;
+
+document.querySelector('.check').addEventListener('click', function () {
+    clicks += 1;
+    document.querySelector('.tries').textContent = clicks;
+});
 
 <!----------------- FERRERO SCRIPT ENDS HERE ----------------->

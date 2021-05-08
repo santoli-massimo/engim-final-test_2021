@@ -256,10 +256,14 @@
     <!----------------- FERRERO HTML CODE STARTS HERE ----------------->
     <div class="page background-shadow" id="ferrero">
         <div class="header">
+            <button class="btn difficulty" type="button">Difficoltà</button>
+            <button class="btn difficulty easy" type="button" hidden>Bassa</button>
+            <button class="btn difficulty medium" type="button" hidden>Media</button>
+            <button class="btn difficulty difficult" type="button" hidden>Alta</button>
             <h1>JS AGAINST HUMANITY</h1>
             <p>Il codice ti tiene prigioniero... solo trovando il numero corretto (compreso fra 1 e 100) potrai sfuggire
                 al
-                controllo del sistema e ritrovare la libertà</p>
+                controllo del sistema e ottenere la libertà</p>
         </div>
 
 
@@ -268,6 +272,7 @@
                 <div class="number"><i class="fas fa-question"></i></div>
                 <div class="messages">
                     <p class="time"></p>
+                    <p>Tentativi: <span class="tries">0</span></p>
                     <p class="response"></p>
                 </div>
                 <input class="input" type="number">
