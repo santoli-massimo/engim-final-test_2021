@@ -705,13 +705,15 @@ controlloGiulio();
 let setDuration = 90;
 
 /**** generate random number ****/
-let secretNumber = Math.trunc(Math.random() * 100) + 1;
+let secretNumber = Math.trunc(Math.random() * 10) + 1;
 document.querySelector('.number').textContent = secretNumber;
 
 
 /**** start the game ****/
 document.querySelector('.start').addEventListener('click', function () {
-    document.querySelector('.time').textContent = ``;
+    /*
+        document.querySelector('.time').textContent = ``;
+    */
 
     countdown(setDuration, document.querySelector('.time'));
     document.querySelector(".start").disabled = true;
@@ -754,7 +756,7 @@ function countdown(duration, show) {
             document.querySelector(".start").disabled = false;
             document.querySelector('.start').textContent = `Ritenta la fuga`;
         } else if (input === secretNumber) {
-            return;
+            show.textContent = `Ti rimanevano ancora ${minutes}:${seconds} minuti`;
         }
     }, 1000);
 }
@@ -798,6 +800,52 @@ let clicks = 0;
 document.querySelector('.check').addEventListener('click', function () {
     clicks += 1;
     document.querySelector('.tries').textContent = clicks;
+});
+
+
+/**** opponent settings ****/
+document.querySelector('.opponent').addEventListener('click', function () {
+    document.querySelector(".commodore").hidden = false;
+    document.querySelector(".deep-blue").hidden = false;
+    document.querySelector(".fugaku").hidden = false;
+});
+
+document.querySelector('.commodore').addEventListener('click', function () {
+    document.querySelector(".commodore").hidden = true;
+    document.querySelector(".deep-blue").hidden = true;
+    document.querySelector(".fugaku").hidden = true;
+    document.querySelector(".opponent").style.backgroundColor = "yellowgreen";
+});
+
+document.querySelector('.deep-blue').addEventListener('click', function () {
+    document.querySelector(".commodore").hidden = true;
+    document.querySelector(".deep-blue").hidden = true;
+    document.querySelector(".fugaku").hidden = true;
+    document.querySelector(".opponent").style.backgroundColor = "darkorange";
+});
+
+document.querySelector('.fugaku').addEventListener('click', function () {
+    document.querySelector(".commodore").hidden = true;
+    document.querySelector(".deep-blue").hidden = true;
+    document.querySelector(".fugaku").hidden = true;
+    document.querySelector(".opponent").style.backgroundColor = "orangered";
+});
+
+/**** opponent logic ****/
+let AIcount = 0;
+document.querySelector('.start').addEventListener('click', function () {
+    setInterval(function () {
+        AItry = Math.trunc(Math.random() * 10) + 1;
+        AIcount += 1;
+        document.querySelector('.AI-tries').textContent = AIcount;
+
+        console.log(AItry);
+        if (AItry === secretNumber) {
+            document.querySelector('.response').textContent = `L'intelligenza artificiale ti ha battuto!`;
+            document.querySelector(".check").disabled = true;
+            clearInterval();
+        }
+    }, 1000);
 });
 
 <!----------------- FERRERO SCRIPT ENDS HERE ----------------->

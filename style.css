@@ -507,15 +507,16 @@ h1 {
 
 #ferrero .header {
     text-align: center;
-    margin-bottom: 80px;
-    padding-top: 80px;
+    margin-top: 80px;
+    margin-bottom: 40px;
+    padding-top: 110px;
     position: relative;
 }
 
 #ferrero .header p {
     max-width: 80%;
     margin: 22px auto;
-    color: #d71500;
+    color: red;
 }
 
 #ferrero .main-content {
@@ -525,6 +526,7 @@ h1 {
     background-position: right;
     border-radius: 30px;
     padding-bottom: 80px;
+    margin-bottom: 80px;
 }
 
 #ferrero .game {
@@ -532,7 +534,7 @@ h1 {
 }
 
 #ferrero .messages {
-    height: 130px;
+    height: 170px;
 }
 
 #ferrero .buttons {
@@ -540,22 +542,24 @@ h1 {
 }
 
 #ferrero .btn {
-    background-color: darkred;
+    background-color: red;
     text-transform: uppercase;
-    color: whitesmoke;
-    border: 1px solid whitesmoke;
+    color: white;
+    font-size: 12px;
+    padding: 13px 20px;
 }
 
 #ferrero .btn:hover {
-    /*
-    background-color: whitesmoke;
-    */
-    border: 1px solid darkred;
-    color: darkred;
+    color: #380000;
 }
 
 #ferrero .start {
-    margin-right: 15px;
+    border-radius: 15px 0 0 15px;
+}
+
+#ferrero .check {
+    border-radius: 0 15px 15px 0;
+
 }
 
 #ferrero .number {
@@ -571,46 +575,61 @@ h1 {
     height: 120px;
     text-align: center;
     margin-bottom: 30px;
-    color: darkred;
+    color: red;
     font-size: 80px;
 }
 
 #ferrero .difficulty {
     position: absolute;
     left: 0;
-    top: 0;
-    border-radius: 15px 0;
-    border: 0;
+    top: 30px;
+    border-radius: 0 15px 15px 0;
     background: darkorange;
-    font-size: 14px;
-    padding: 13px 20px;
-}
-
-#ferrero .difficulty:hover {
-    border: 0;
-    color: #380000;
 }
 
 #ferrero .easy {
     position: absolute;
-    left: 149px;
-    border-radius: 0 0 15px 15px;
+    top: 85px;
     background: yellowgreen;
 }
 
 #ferrero .medium {
     position: absolute;
-    left: 257px;
-    border-radius: 0 0 15px 15px;
+    top: 140px;
     background: darkorange;
 }
 
 #ferrero .difficult {
     position: absolute;
-    left: 356px;
-    border-radius: 0 0 15px 15px;
+    top: 195px;
     background: orangered;
 }
+
+#ferrero .opponent {
+    position: absolute;
+    right: 0;
+    top: 30px;
+    border-radius: 15px 0 0 15px;    background: darkorange;
+}
+
+#ferrero .commodore {
+    position: absolute;
+    top: 85px;
+    background: yellowgreen;
+}
+
+#ferrero .deep-blue {
+    position: absolute;
+    top: 140px;
+    background: darkorange;
+}
+
+#ferrero .fugaku {
+    position: absolute;
+    top: 195px;
+    background: orangered;
+}
+
 
 /********************* FERRERO CSS CODE ENDS HERE *********************/
 
