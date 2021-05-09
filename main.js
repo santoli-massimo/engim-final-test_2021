@@ -698,4 +698,88 @@ controlloGiulio();
 
 /* Inizia il codice di Imane */
 
+//array con le carte da gioco 
+var arrayMemoryI = ['||','||','&&','&&','==','=='];
+//array di appoggio per confrontare i valori delle due carte
+var valoriMemoryI = [];
+//array di appoggio per conservare il loro relativo id
+var valoriIdMemory = [];
+
+var carteGirateI = 0;
+console.log(arrayMemoryI.length)
+//funzione per randomizzare i valori del mio array
+
+
+
+ function mischiaCarte(array){
+    var i = array.length, j, temp;
+    while(--i> 0){
+        j = Math.floor(Math.random() * (i+1));
+        temp = array[j];
+        array[j] = array[i];
+        array[i] = temp;
+    }
+}
+//funzione crea pagina html con le carte da gioco gia randomizzate
+function newBoard(){
+	carteGirateI = 0;
+	var tavoloGiocoImane = '';
+  mischiaCarte(arrayMemoryI);
+    for(var i = 0; i < arrayMemoryI.length; i++){
+		tavoloGiocoImane += '<div id="carta_'+i+'" onclick="giraCarteI(this,\''+arrayMemoryI
+	[i]+'\')"></div>';
+	}
+
+	document.getElementById('memory_board').innerHTML = tavoloGiocoImane;
+}
+
+//funzione che capovolge le carte quando non sono uguali
+function rigiraCarteI(){
+	var carta1 = document.getElementById(valoriIdMemory[0]);
+	var carta2 = document.getElementById(valoriIdMemory[1]);
+	carta1.style.background = 'url(immagini/santoli.jfif) no-repeat';
+	carta1.innerHTML = "";
+	carta2.style.background = 'url(immagini/santoli.jfif) no-repeat';
+	carta2.innerHTML = "";
+	// pulisco entrambi gli array di supporto
+	valoriMemoryI = [];
+	valoriIdMemory = [];
+}
+//funzione logica che gestisce l'intero gioco e si ha ad ogni click sulla carta
+function giraCarteI(carta,val){
+	if(carta.innerHTML == "" && valoriMemoryI.length < 2){
+		carta.style.background = 'pink';
+		carta.innerHTML = val;
+		//se non sono girate carte inserisce nell'array d'appoggio il valore della prima carta girata
+		//e nel secondo array l'id del div della carta
+		if(valoriMemoryI.length == 0){
+           
+			valoriMemoryI.push(val);
+			valoriIdMemory.push(carta.id);
+			console.log(carta.id);
+		} else if(valoriMemoryI.length == 1){
+			valoriMemoryI.push(val);
+			valoriIdMemory.push(carta.id);
+            //controlla se le tesser sono uguali e se si incrementa il contatore di due
+			if(valoriMemoryI[0] == valoriMemoryI[1]){
+				carteGirateI += 2;
+				//pulire entrambi gli array di supporto
+				valoriMemoryI = [];
+            	valoriIdMemory = [];
+                //controlla se tutte le carte siano girate o meno cosi o finisce la partrita o va avanti
+				if(carteGirateI == arrayMemoryI.length){
+					alert("Hai Vinto!!!!!! Se vuoi giocare di nuovo premi ok");
+					document.getElementById('memory_board').innerHTML = "";
+					newBoard();
+				}
+			    } else {
+				
+				setTimeout(rigiraCarteI, 700);
+			}
+		}
+	}
+}
+
+newBoard();
+
 /* Finisce il codice di Imane*/

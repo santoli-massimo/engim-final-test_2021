@@ -473,6 +473,35 @@ color: red;
 
 /* Inizia il codice di Imane */
 
+.titoloImane{
+  color: red;
+  font-size: 40px;
+  text-align: center;
+  
+}
+
+div#memory_board{
+
+width:600px	;
+height:400px;
+margin:0 auto;
+
+}
+
+div#memory_board > div{
+background: url(immagini/santoli.jfif) no-repeat;
+border:#000 1px solid;
+width:71px;
+height:71px;
+float:left;
+margin:10px;
+padding:10px;
+font-size:30px;
+cursor:pointer;
+text-align:center;
+}
+
+
 /* Finisce il codice di Imane*/
 
 
