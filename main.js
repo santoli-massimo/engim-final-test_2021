@@ -141,6 +141,59 @@ nouriScripts();
 
 /* FINISCE CODICE JS DI DAVIDE ANDREANA */
 
+
+// Start of Franco's Code Block
+{
+    let formElement = document.getElementById("franco-form");
+    let emailElement = document.getElementById("franco-email");
+    let resetElement = document.getElementById("franco-reset");
+    let successElement = document.getElementById("franco-success");
+    let errorElement = document.getElementById("franco-error");
+
+    function clearMessages() {
+        successElement.innerHTML = "";
+        errorElement.innerHTML = "";
+    }
+
+    resetElement.addEventListener('click', () => {
+        formElement.reset()
+        clearMessages()
+    });
+
+    formElement.addEventListener('submit', (event) => {
+
+        // Prevent page refresh after clicking the form submit button
+        event.preventDefault();
+
+        clearMessages();
+
+        // Email Validation
+        let emailValue = emailElement.value;
+        let atSign = emailValue.indexOf("@");
+        let lastDot = emailValue.lastIndexOf("\.");
+        let lastDotText = emailValue.slice(lastDot + 1);
+        
+        if (atSign > 0 && lastDot > atSign + 1 && lastDot < emailValue.length && emailValue[atSign + 1] !== "." && emailValue.indexOf(" ") === -1 && emailValue.indexOf("..") === -1 && lastDotText.length > 1 && lastDotText.length < 4 && emailValue.length > 0) {
+
+            // API
+            fetch('https://jsonplaceholder.typicode.com/posts', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ email: emailValue }) })
+                .then(response => response.json())
+                .then(() => {
+                    successElement.innerHTML = 'Email sent to API successfully';
+                })
+                .catch(() => {
+                    errorElement.innerHTML = 'Error sending email to API';
+                });
+
+            return;
+        }
+
+        errorElement.innerHTML = "The written email isn't a valid email";
+    });
+}
+// End of Franco's Code Block
+
+
 //Inizia il codice di Luca Tabbia
 
 

@@ -129,6 +129,18 @@ h1 {
 
 /* FINISCE CODICE CSS DI DAVIDE ANDREANA */
 
+
+/* Franco Start */
+#franco-success {
+    color: green;
+}
+
+#franco-error {
+    color: red;
+}
+/* Franco End */
+
+
 /*INIZIA IL CODICE DI LUCA TABBIA*/
 #campo-santoli-main-row {
     height: 80vh;
