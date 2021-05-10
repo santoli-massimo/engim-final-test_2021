@@ -474,29 +474,31 @@ color: red;
 /* Inizia il codice di Imane */
 
 .titoloImane{
-  color: red;
-  font-size: 40px;
+  color: blue;
+  font-size: 60px;
   text-align: center;
+  padding: 20px;
   
 }
 
 div#memory_board{
 
-width:600px	;
-height:400px;
+width:100%	;
+height:50%;
 margin:0 auto;
 
 }
 
 div#memory_board > div{
-background: url(immagini/santoli.jfif) no-repeat;
-border:#000 1px solid;
-width:71px;
-height:71px;
+background: url(icons/santoliM.jpg) no-repeat;
+border:#000 2px solid;
+width:150px;
+
+height:150px;
 float:left;
 margin:10px;
 padding:10px;
-font-size:30px;
+font-size:74px;
 cursor:pointer;
 text-align:center;
 }

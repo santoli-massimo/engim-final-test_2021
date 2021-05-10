@@ -698,8 +698,8 @@ controlloGiulio();
 
 /* Inizia il codice di Imane */
 
-//array con le carte da gioco 
-var arrayMemoryI = ['||','||','&&','&&','==','=='];
+//array con le carte da gioco si possono aggiungere altri elementi l'importante che ci sia sempre il doppione
+var arrayMemoryI = ['||','||','&&','&&','==','==','=','=','++','++','%','%','/','/','!=','!=','--','--'];
 //array di appoggio per confrontare i valori delle due carte
 var valoriMemoryI = [];
 //array di appoggio per conservare il loro relativo id
@@ -737,9 +737,9 @@ function newBoard(){
 function rigiraCarteI(){
 	var carta1 = document.getElementById(valoriIdMemory[0]);
 	var carta2 = document.getElementById(valoriIdMemory[1]);
-	carta1.style.background = 'url(immagini/santoli.jfif) no-repeat';
+	carta1.style.background = 'url(icons/santoliM.jpg) no-repeat';
 	carta1.innerHTML = "";
-	carta2.style.background = 'url(immagini/santoli.jfif) no-repeat';
+	carta2.style.background = 'url(icons/santoliM.jpg) no-repeat';
 	carta2.innerHTML = "";
 	// pulisco entrambi gli array di supporto
 	valoriMemoryI = [];
@@ -748,7 +748,7 @@ function rigiraCarteI(){
 //funzione logica che gestisce l'intero gioco e si ha ad ogni click sulla carta
 function giraCarteI(carta,val){
 	if(carta.innerHTML == "" && valoriMemoryI.length < 2){
-		carta.style.background = 'pink';
+		carta.style.background = 'lightskyblue';
 		carta.innerHTML = val;
 		//se non sono girate carte inserisce nell'array d'appoggio il valore della prima carta girata
 		//e nel secondo array l'id del div della carta
