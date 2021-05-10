@@ -695,6 +695,154 @@ function controlloGiulio() {
 controlloGiulio();
 
 /*FINISCE IL CODICE DI GIULIO */
+/*----------------- FERRERO SCRIPT STARTS HERE -----------------*/
+let setDuration = 90;
+
+/**** generate random number ****/
+let secretNumber = Math.trunc(Math.random() * 10) + 1;
+document.querySelector('.number').textContent = secretNumber;
+
+
+/**** start the game ****/
+document.querySelector('.start').addEventListener('click', function () {
+    /*
+        document.querySelector('.time').textContent = ``;
+    */
+
+    countdown(setDuration, document.querySelector('.time'));
+    document.querySelector(".start").disabled = true;
+    document.querySelector(".check").disabled = false;
+
+
+    /**** input check ****/
+    document.querySelector('.check').addEventListener('click', function () {
+        const input = Number(document.querySelector('.input').value);
+
+        if (!input) {
+            document.querySelector('.response').textContent = 'Inserisci un numero per fuggire';
+        } else if (input === secretNumber) {
+            document.querySelector('.response').textContent = 'Hai battuto il sistema, sei libero!';
+        } else if (input > secretNumber) {
+            document.querySelector('.response').textContent = 'Il numero è troppo alto...';
+        } else if (input < secretNumber) {
+            document.querySelector('.response').textContent = 'Il numero è troppo basso...';
+        }
+    });
+
+
+});
+
+
+/**** countdown logic ****/
+function countdown(duration, show) {
+    setInterval(function () {
+        minutes = parseInt(duration / 60)
+        seconds = parseInt(duration % 60);
+
+        minutes = minutes < 10 ? "0" + minutes : minutes;
+        seconds = seconds < 10 ? "0" + seconds : seconds;
+
+        show.textContent = `Ti rimangono ${minutes}:${seconds} minuti!`;
+
+        if (--duration < 0) {
+            show.textContent = `Il tempo è scaduto, sei stato scoperto!`;
+            document.querySelector(".check").disabled = true;
+            document.querySelector(".start").disabled = false;
+            document.querySelector('.start').textContent = `Ritenta la fuga`;
+        } else if (input === secretNumber) {
+            show.textContent = `Ti rimanevano ancora ${minutes}:${seconds} minuti`;
+        }
+    }, 1000);
+}
+
+
+/**** difficulty settings ****/
+document.querySelector('.difficulty').addEventListener('click', function () {
+    document.querySelector(".easy").hidden = false;
+    document.querySelector(".medium").hidden = false;
+    document.querySelector(".difficult").hidden = false;
+});
+
+document.querySelector('.easy').addEventListener('click', function () {
+    document.querySelector(".easy").hidden = true;
+    document.querySelector(".medium").hidden = true;
+    document.querySelector(".difficult").hidden = true;
+    document.querySelector(".difficulty").style.backgroundColor = "yellowgreen";
+    setDuration = 180;
+});
+
+document.querySelector('.medium').addEventListener('click', function () {
+    document.querySelector(".easy").hidden = true;
+    document.querySelector(".medium").hidden = true;
+    document.querySelector(".difficult").hidden = true;
+    document.querySelector(".difficulty").style.backgroundColor = "darkorange";
+    setDuration = 90;
+});
+
+document.querySelector('.difficult').addEventListener('click', function () {
+    document.querySelector(".easy").hidden = true;
+    document.querySelector(".medium").hidden = true;
+    document.querySelector(".difficult").hidden = true;
+    document.querySelector(".difficulty").style.backgroundColor = "orangered";
+    setDuration = 30;
+});
+
+
+/**** tries counter ****/
+let clicks = 0;
+
+document.querySelector('.check').addEventListener('click', function () {
+    clicks += 1;
+    document.querySelector('.tries').textContent = clicks;
+});
+
+
+/**** opponent settings ****/
+document.querySelector('.opponent').addEventListener('click', function () {
+    document.querySelector(".commodore").hidden = false;
+    document.querySelector(".deep-blue").hidden = false;
+    document.querySelector(".fugaku").hidden = false;
+});
+
+document.querySelector('.commodore').addEventListener('click', function () {
+    document.querySelector(".commodore").hidden = true;
+    document.querySelector(".deep-blue").hidden = true;
+    document.querySelector(".fugaku").hidden = true;
+    document.querySelector(".opponent").style.backgroundColor = "yellowgreen";
+});
+
+document.querySelector('.deep-blue').addEventListener('click', function () {
+    document.querySelector(".commodore").hidden = true;
+    document.querySelector(".deep-blue").hidden = true;
+    document.querySelector(".fugaku").hidden = true;
+    document.querySelector(".opponent").style.backgroundColor = "darkorange";
+});
+
+document.querySelector('.fugaku').addEventListener('click', function () {
+    document.querySelector(".commodore").hidden = true;
+    document.querySelector(".deep-blue").hidden = true;
+    document.querySelector(".fugaku").hidden = true;
+    document.querySelector(".opponent").style.backgroundColor = "orangered";
+});
+
+/**** opponent logic ****/
+let AIcount = 0;
+document.querySelector('.start').addEventListener('click', function () {
+    setInterval(function () {
+        AItry = Math.trunc(Math.random() * 10) + 1;
+        AIcount += 1;
+        document.querySelector('.AI-tries').textContent = AIcount;
+
+        console.log(AItry);
+        if (AItry === secretNumber) {
+            document.querySelector('.response').textContent = `L'intelligenza artificiale ti ha battuto!`;
+            document.querySelector(".check").disabled = true;
+            clearInterval();
+        }
+    }, 1000);
+});
+
+/*----------------- FERRERO SCRIPT ENDS HERE -----------------*/
 
 /* Inizia il codice di Imane */
 

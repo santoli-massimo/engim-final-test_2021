@@ -1,125 +1,125 @@
 h1 {
-  color: #1d1d6a;
+    color: #1d1d6a;
 }
 
 .page {
-  display: none;
+    display: none;
 }
 
 .page:first-child {
-  display: block;
+    display: block;
 }
 
 /* Nouri project style started here */
 /* Highlight container background */
 .highlightBackground {
-  box-shadow: rgba(23, 162, 184, 0.35) 0px 5px 15px;
-  border-radius: 7px;
+    box-shadow: rgba(23, 162, 184, 0.35) 0px 5px 15px;
+    border-radius: 7px;
 }
 
 .highlightPadding {
-  padding: 2px;
+    padding: 2px;
 }
 
 /* Highlight colors */
 .highlightBlue {
-  background-color: #007bff;
+    background-color: #007bff;
 }
 
 .highlightRed {
-  background-color: #dc3545;
+    background-color: #dc3545;
 }
 
 .highlightOrange {
-  background-color: #fd7e14;
+    background-color: #fd7e14;
 }
 
 .highlightGreen {
-  background-color: #28a745;
+    background-color: #28a745;
 }
 
 .highlightCyan {
-  background-color: #17a2b8;
+    background-color: #17a2b8;
 }
 
 .highlightYellow {
-  background-color: #ffc107;
+    background-color: #ffc107;
 }
 
 .highlightPink {
-  background-color: #e83e8c;
+    background-color: #e83e8c;
 }
 
 .highlightIndigo {
-  background-color: #6610f2;
+    background-color: #6610f2;
 }
 
 .highlightTeal {
-  background-color: #20c997;
+    background-color: #20c997;
 }
 
 .highlightMore {
-  background-color: #7fffd4;
+    background-color: #7fffd4;
 }
 
 /* Toggle switch */
 .highlightSwitch {
-  position: relative;
-  display: inline-block;
-  width: 60px;
-  height: 34px;
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
 }
 
 .highlightSwitch input {
-  opacity: 0;
-  width: 0;
-  height: 0;
+    opacity: 0;
+    width: 0;
+    height: 0;
 }
 
 .highlightSlider {
-  position: absolute;
-  cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #ccc;
-  -webkit-transition: .4s;
-  transition: .4s;
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
 }
 
 .highlightSlider:before {
-  position: absolute;
-  content: "";
-  height: 26px;
-  width: 26px;
-  left: 4px;
-  bottom: 4px;
-  background-color: white;
-  -webkit-transition: .4s;
-  transition: .4s;
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
 }
 
-#highlightCheckboxContainer input:checked+.highlightSlider {
-  background-color: #dc3545;
+#highlightCheckboxContainer input:checked + .highlightSlider {
+    background-color: #dc3545;
 }
 
-#highlightCheckboxContainer input:focus+.highlightSlider {
-  box-shadow: 0 0 1px #dc3545;
+#highlightCheckboxContainer input:focus + .highlightSlider {
+    box-shadow: 0 0 1px #dc3545;
 }
 
-#highlightCheckboxContainer input:checked+.highlightSlider:before {
-  -webkit-transform: translateX(26px);
-  -ms-transform: translateX(26px);
-  transform: translateX(26px);
+#highlightCheckboxContainer input:checked + .highlightSlider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
 }
 
 .highlightSlider.highlightRound {
-  border-radius: 34px;
+    border-radius: 34px;
 }
 
 .highlightSlider.highlightRound:before {
-  border-radius: 50%;
+    border-radius: 50%;
 }
 
 /* Nouri project style finished here */
@@ -130,330 +130,347 @@ h1 {
 /* FINISCE CODICE CSS DI DAVIDE ANDREANA */
 
 /*INIZIA IL CODICE DI LUCA TABBIA*/
-#campo-santoli-main-row{
-  height: 80vh;
-  margin-bottom: 100px;
+#campo-santoli-main-row {
+    height: 80vh;
+    margin-bottom: 100px;
 }
-#campo-santoli-table-container{
-  height: 100%;
-  width: 100%;
-  overflow-y: auto;
-  overflow-x: auto;
+
+#campo-santoli-table-container {
+    height: 100%;
+    width: 100%;
+    overflow-y: auto;
+    overflow-x: auto;
 }
-#campo-santoli-table{
-  position: absolute;
-  margin: 0 auto;
-  margin-top: 20px;
-  table-layout: fixed;
-  width: 100%;
-  }
-#send-creation-table{
-  position: absolute;
-  bottom: 40px;
-  width: 30%;
-  left: 35%;
+
+#campo-santoli-table {
+    position: absolute;
+    margin: 0 auto;
+    margin-top: 20px;
+    table-layout: fixed;
+    width: 100%;
 }
-#campo-santoli-table-cover{
-  position: absolute;
-  margin: 0 auto;
-  margin-top: 20px;
-  table-layout: fixed;
-  width: 100%;
-  z-index: 100;
-  }
-.cs-cell{
-  height: 30px;
-  width: 80px;
-  border: 2px solid white;
-  background-color: black;
-  text-align: center;
+
+#send-creation-table {
+    position: absolute;
+    bottom: 40px;
+    width: 30%;
+    left: 35%;
 }
-.cs-cell-cover{
-  height: 30px;
-  width: 80px;
-  border: 2px solid white;
-  background-color: darkgray;
-  color: black;
+
+#campo-santoli-table-cover {
+    position: absolute;
+    margin: 0 auto;
+    margin-top: 20px;
+    table-layout: fixed;
+    width: 100%;
+    z-index: 100;
 }
-#cs-h2-statement{
-  position: absolute;
-  width: 30%;
-  height: 20%;
-  top: 40%;
-  left: 35%;
-  text-align: center;
-  z-index: 100;
-  visibility: hidden;
+
+.cs-cell {
+    height: 30px;
+    width: 80px;
+    border: 2px solid white;
+    background-color: black;
+    text-align: center;
 }
-#cs-form-menù{
-  height: 100%;
+
+.cs-cell-cover {
+    height: 30px;
+    width: 80px;
+    border: 2px solid white;
+    background-color: darkgray;
+    color: black;
 }
-.hidden-number-times{
-  visibility: hidden;
-  margin-top: 10px;
+
+#cs-h2-statement {
+    position: absolute;
+    width: 30%;
+    height: 20%;
+    top: 40%;
+    left: 35%;
+    text-align: center;
+    z-index: 100;
+    visibility: hidden;
 }
-.hidden-number-times:first{
-  margin-top: 40px;
+
+#cs-form-menù {
+    height: 100%;
 }
-#cs-form-menù{
-  padding-top: 30px;
+
+.hidden-number-times {
+    visibility: hidden;
+    margin-top: 10px;
 }
+
+.hidden-number-times:first {
+    margin-top: 40px;
+}
+
+#cs-form-menù {
+    padding-top: 30px;
+}
+
 /*FINISCE IL CODICE DI LUCA TABBIA*/
 
 /* CSS Stefano dS*/
 .sds-main {
-  background-color: #ecf0f3;
-  padding: 25px;
+    background-color: #ecf0f3;
+    padding: 25px;
 }
 
 .sds-loader {
-  border: 16px solid white;
-  border-radius: 50%;
-  border-top: 16px solid #99adbd81;
-  width: 120px;
-  height: 120px;
-  animation: sds-spin 2s linear infinite;
-  margin: 0 auto;
-  margin-top: 300px;
+    border: 16px solid white;
+    border-radius: 50%;
+    border-top: 16px solid #99adbd81;
+    width: 120px;
+    height: 120px;
+    animation: sds-spin 2s linear infinite;
+    margin: 0 auto;
+    margin-top: 300px;
 }
 
 @keyframes sds-spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
 }
 
-.sds-form{
-  display:flex;
-  flex-direction: column;
-  width:70%;
-  margin: 40px auto;
-  background-color: #ecf0f3;
-  border-radius:40px;
-  padding:25px;
-  box-shadow: 13px 13px 20px #cbced1,
-  -13px -13px 20px #ffffff;
+.sds-form {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    margin: 40px auto;
+    background-color: #ecf0f3;
+    border-radius: 40px;
+    padding: 25px;
+    box-shadow: 13px 13px 20px #cbced1,
+    -13px -13px 20px #ffffff;
 }
 
 @media only screen and (max-width: 768px) {
-  /* For mobile phones: */
-  [class="sds-form"] {
-    width: 80%;
-    margin:0 auto;
-  }
-  .sds-main {
-    padding:0px;
-  }
+    /* For mobile phones: */
+    [class="sds-form"] {
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    .sds-main {
+        padding: 0px;
+    }
 }
 
 .sds-form input, .sds-form select, .sds-form option {
-  display:block;
-  flex-basis: 0;
-  border:none;
-  background: none;
-  outline: none;
-  font-size: 18px;
-  color: #69727a;
-  padding:20px 10px 20px 5px;
-  box-shadow: inset 8px 8px 8px #cbced1,
-  inset -8px -8px 8px #ffffff;
-  margin: 0 auto 30px auto;
-  border-radius: 25px;
-  text-indent: 15px;
-  transition: .5s;
-  font-family: 'Comfortaa', cursive;
-  max-width: 100%;
+    display: block;
+    flex-basis: 0;
+    border: none;
+    background: none;
+    outline: none;
+    font-size: 18px;
+    color: #69727a;
+    padding: 20px 10px 20px 5px;
+    box-shadow: inset 8px 8px 8px #cbced1,
+    inset -8px -8px 8px #ffffff;
+    margin: 0 auto 30px auto;
+    border-radius: 25px;
+    text-indent: 15px;
+    transition: .5s;
+    font-family: 'Comfortaa', cursive;
+    max-width: 100%;
 }
 
 .sds-form input[type="button"], .sds-form input[type="submit"], .sds-form input[type="reset"] {
-  color: rgb(119, 119, 119);
-  padding:20px 20px 20px 20px;
-  box-shadow: inset -8px -8px 8px #cbced1, inset 8px 8px 8px #ffffff;
-  text-indent: initial;
-  transition: .5s;
+    color: rgb(119, 119, 119);
+    padding: 20px 20px 20px 20px;
+    box-shadow: inset -8px -8px 8px #cbced1, inset 8px 8px 8px #ffffff;
+    text-indent: initial;
+    transition: .5s;
 }
 
 .sds-form input[type="submit"] {
-  color: white;
-  padding:20px 20px 20px 20px;
-  background-color:green;
-  box-shadow: inset -8px -8px 8px rgb(0, 68, 0), inset 8px 8px 8px rgb(125, 179, 125);
-  text-indent: initial;
-  transition: .5s;
+    color: white;
+    padding: 20px 20px 20px 20px;
+    background-color: green;
+    box-shadow: inset -8px -8px 8px rgb(0, 68, 0), inset 8px 8px 8px rgb(125, 179, 125);
+    text-indent: initial;
+    transition: .5s;
 }
 
 .sds-form input[type="reset"] {
-  color: white;
-  padding:20px 20px 20px 20px;
-  background-color:red;
-  box-shadow: inset -8px -8px 8px rgb(119, 0, 0), inset 8px 8px 8px rgb(255, 125, 125);
-  text-indent: initial;
-  transition: .5s;
+    color: white;
+    padding: 20px 20px 20px 20px;
+    background-color: red;
+    box-shadow: inset -8px -8px 8px rgb(119, 0, 0), inset 8px 8px 8px rgb(255, 125, 125);
+    text-indent: initial;
+    transition: .5s;
 }
 
 .sds-form input[type="button"]:focus {
-  box-shadow: inset 8px 8px 8px #cbced1,
-  inset -8px -8px 8px #ffffff;
-  background: none;
-  color: #cbced1;
+    box-shadow: inset 8px 8px 8px #cbced1,
+    inset -8px -8px 8px #ffffff;
+    background: none;
+    color: #cbced1;
 }
 
 .sds-form input[type="submit"]:focus {
-  background-color: rgb(0, 212, 0);
-  box-shadow: inset -12px -12px 12px rgb(0, 117, 0), inset 4px 4px 4px rgb(154, 218, 154);
-  color: rgb(194, 255, 194);
+    background-color: rgb(0, 212, 0);
+    box-shadow: inset -12px -12px 12px rgb(0, 117, 0), inset 4px 4px 4px rgb(154, 218, 154);
+    color: rgb(194, 255, 194);
 }
 
 .sds-form input[type="reset"]:focus {
-  background-color: rgb(255, 82, 82);
-  box-shadow: inset -12px -12px 12px rgb(173, 0, 0), inset 4px 4px 4px rgb(218, 154, 154);
-  color: #ffc2c2;
+    background-color: rgb(255, 82, 82);
+    box-shadow: inset -12px -12px 12px rgb(173, 0, 0), inset 4px 4px 4px rgb(218, 154, 154);
+    color: #ffc2c2;
 }
 
 .sds-form input::placeholder, .sds-form select {
-color: white;
-text-shadow: 0px 0px 5px #69727a;
-transition: .5s;
+    color: white;
+    text-shadow: 0px 0px 5px #69727a;
+    transition: .5s;
 }
 
 .sds-form input:focus {
-  background-color:white;
+    background-color: white;
 }
 
-.sds-form input:focus::placeholder{
-  color:#cbced1;
-  font-size:0.7em;
-  transform:translateX(100%);
+.sds-form input:focus::placeholder {
+    color: #cbced1;
+    font-size: 0.7em;
+    transform: translateX(100%);
 }
 
 .sds-fieldset {
-  border: 3px solid white;
-  border-radius:25px;
-  width:50%;
-  display:flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin: 15px auto;
+    border: 3px solid white;
+    border-radius: 25px;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 15px auto;
 }
 
 @media only screen and (max-width: 768px) {
-  /* For mobile phones: */
-  [class="sds-fieldset"] {
-    width: 40%;
-  }
+    /* For mobile phones: */
+    [class="sds-fieldset"] {
+        width: 40%;
+    }
 }
 
 .sds-fieldset legend {
-  background-color:white;
-  border-radius:25px;
-  padding:20px 20px 20px 20px;
-  color: #cbced1;
-  font-family: 'Comfortaa', cursive;
-  font-size: 18px;
+    background-color: white;
+    border-radius: 25px;
+    padding: 20px 20px 20px 20px;
+    color: #cbced1;
+    font-family: 'Comfortaa', cursive;
+    font-size: 18px;
 }
 
 .sds-flex-row {
-  display:flex;
-  flex-direction: row;
+    display: flex;
+    flex-direction: row;
 }
 
 .sds-flex-column {
-  display:flex;
-  flex-direction: column;
+    display: flex;
+    flex-direction: column;
 }
 
 .sds-flex-row input {
-  flex-grow:1;
+    flex-grow: 1;
 }
 
 .sds-modal-bg, #sds-first {
-  display:block;
-  z-index:1002;
-  width:100%;
-  height:100%;
-  overflow: scroll;
-  position:fixed;
-  left: 0;
-  top: 0;
-  background-color: #ecf0f39f;;
-  opacity: 1;
+    display: block;
+    z-index: 1002;
+    width: 100%;
+    height: 100%;
+    overflow: scroll;
+    position: fixed;
+    left: 0;
+    top: 0;
+    background-color: #ecf0f39f;;
+    opacity: 1;
 }
 
 .sds-modal-content {
-  display:flex;
-  flex-direction:column;
-  padding:11px;
+    display: flex;
+    flex-direction: column;
+    padding: 11px;
 }
 
 .sds-address-section {
-  display: flex;
-  flex-direction: column;
-  padding:0;
-  box-shadow: inset 8px 8px 8px #cbced1,
-  inset -8px -8px 8px #ffffff;
-  border-radius:25px;
-  width:90%; 
-  margin:25px;
-  border:5px solid rgba(255, 0, 0, 0);
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    box-shadow: inset 8px 8px 8px #cbced1,
+    inset -8px -8px 8px #ffffff;
+    border-radius: 25px;
+    width: 90%;
+    margin: 25px;
+    border: 5px solid rgba(255, 0, 0, 0);
 }
 
 @media only screen and (max-width: 768px) {
-  /* For mobile phones: */
-  [class="sds-address-section"] {
-    width: 70%;
-    margin:0 auto;
-  }
+    /* For mobile phones: */
+    [class="sds-address-section"] {
+        width: 70%;
+        margin: 0 auto;
+    }
 }
 
-.sds-address-section input, .sds-address-section input:focus{
-  margin:0;
-  box-shadow:none;
-  background:none;
-  text-overflow: ellipsis;
+.sds-address-section input, .sds-address-section input:focus {
+    margin: 0;
+    box-shadow: none;
+    background: none;
+    text-overflow: ellipsis;
 }
 
 .sds-address-section input[type="button"] {
-  margin:0 auto 15px auto;
-  box-shadow:none;
-  background-image:url("icons/trash.svg");
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-size:15px;
-  background-position: left;
-  color:black;
-  padding:5px 5px 5px 20px;
-  border-radius:0;
-  text-align:left;
-  cursor:pointer;
-  transition-duration: .3s;
+    margin: 0 auto 15px auto;
+    box-shadow: none;
+    background-image: url("icons/trash.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-size: 15px;
+    background-position: left;
+    color: black;
+    padding: 5px 5px 5px 20px;
+    border-radius: 0;
+    text-align: left;
+    cursor: pointer;
+    transition-duration: .3s;
 }
 
 .sds-address-section input[type="button"]:hover {
-  text-decoration: underline;
+    text-decoration: underline;
 }
 
 .sds-address-section input[type="button"]:focus {
-  color:black;
-  box-shadow:none;
-  background-image:url("icons/trash.svg");
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-size:15px;
-  background-position: left; 
+    color: black;
+    box-shadow: none;
+    background-image: url("icons/trash.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-size: 15px;
+    background-position: left;
 }
 
 #sds-alert {
-  position:fixed;
-  top: 0;
-  left:0;
-  margin: 0;
-  background-color:red;
-  color: white;
-  padding: 15px;
-  height: 50px;
-  width:100%;
-  font-family: 'Comfortaa', cursive;
-  box-shadow: 0px 5px 11px #0000008c;
+    position: fixed;
+    top: 0;
+    left: 0;
+    margin: 0;
+    background-color: red;
+    color: white;
+    padding: 15px;
+    height: 50px;
+    width: 100%;
+    font-family: 'Comfortaa', cursive;
+    box-shadow: 0px 5px 11px #0000008c;
 }
 
 /* Fine codice Stefano*/
@@ -461,12 +478,12 @@ transition: .5s;
 /* INIZIA IL CODICE DI GIULIO */
 
 .titolo-giulio {
-  text-align: center;
+    text-align: center;
 }
 
 
 #errore-giulio {
-color: red;
+    color: red;
 }
 
 /* FINISCE IL CODICE DI GIULIO */
@@ -518,6 +535,152 @@ div#memory_board > div{
 }
 
 /* Finisce il codice di Imane*/
+
+/********************* FERRERO CSS CODE STARTS HERE *********************/
+#ferrero * {
+    color: whitesmoke;
+    font-family: 'Krona One', sans-serif;
+}
+
+.background-shadow {
+    box-shadow: rgb(255 0 0) 0px 0px 60px 20px;
+}
+
+#ferrero {
+    background-color: black;
+    margin: 40px auto;
+    border-radius: 30px;
+}
+
+#ferrero .header {
+    text-align: center;
+    margin-top: 80px;
+    margin-bottom: 40px;
+    padding-top: 110px;
+    position: relative;
+}
+
+#ferrero .header p {
+    max-width: 80%;
+    margin: 22px auto;
+    color: red;
+}
+
+#ferrero .main-content {
+    background: url("images/anonymous-mask.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: right;
+    border-radius: 30px;
+    padding-bottom: 80px;
+    margin-bottom: 80px;
+}
+
+#ferrero .game {
+    margin-left: 20%;
+}
+
+#ferrero .messages {
+    height: 170px;
+}
+
+#ferrero .buttons {
+    display: flex;
+}
+
+#ferrero .btn {
+    background-color: red;
+    text-transform: uppercase;
+    color: white;
+    font-size: 12px;
+    padding: 13px 20px;
+}
+
+#ferrero .btn:hover {
+    color: #380000;
+}
+
+#ferrero .start {
+    border-radius: 15px 0 0 15px;
+}
+
+#ferrero .check {
+    border-radius: 0 15px 15px 0;
+
+}
+
+#ferrero .number {
+    font-size: 150px;
+    font-family: unset;
+}
+
+#ferrero .input {
+    border: 5px solid whitesmoke;
+    border-radius: 5px;
+    background-color: black;
+    width: 200px;
+    height: 120px;
+    text-align: center;
+    margin-bottom: 30px;
+    color: red;
+    font-size: 80px;
+}
+
+#ferrero .difficulty {
+    position: absolute;
+    left: 0;
+    top: 30px;
+    border-radius: 0 15px 15px 0;
+    background: darkorange;
+}
+
+#ferrero .easy {
+    position: absolute;
+    top: 85px;
+    background: yellowgreen;
+}
+
+#ferrero .medium {
+    position: absolute;
+    top: 140px;
+    background: darkorange;
+}
+
+#ferrero .difficult {
+    position: absolute;
+    top: 195px;
+    background: orangered;
+}
+
+#ferrero .opponent {
+    position: absolute;
+    right: 0;
+    top: 30px;
+    border-radius: 15px 0 0 15px;    background: darkorange;
+}
+
+#ferrero .commodore {
+    position: absolute;
+    top: 85px;
+    background: yellowgreen;
+}
+
+#ferrero .deep-blue {
+    position: absolute;
+    top: 140px;
+    background: darkorange;
+}
+
+#ferrero .fugaku {
+    position: absolute;
+    top: 195px;
+    background: orangered;
+}
+
+
+/********************* FERRERO CSS CODE ENDS HERE *********************/
+
+
 
 
 

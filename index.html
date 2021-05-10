@@ -61,6 +61,11 @@
         <li class="nav-item page-info page-link">
           <a class="nav-link" data-page="giulioJimenez">Giulio J.</a>
         </li>
+
+        <li class="nav-item page-info page-link">
+          <a class="nav-link" data-page="ferrero">Alessandro F.</a>
+        </li>
+
         <li class="nav-item page-info page-link">
           <a class="nav-link" data-page="imane">Imane H.</a>
         </li>
@@ -234,23 +239,62 @@
       </div>
           <!--FINISCE IL CODICE DI GIULIO-->
 
-<!--Inizio codice Imane-->
+    <!----------------- FERRERO HTML CODE STARTS HERE ----------------->
+    <div class="page background-shadow" id="ferrero">
+      <div class="header">
+          <button class="btn difficulty" type="button">Difficoltà</button>
+          <button class="btn difficulty easy" type="button" hidden>Bassa</button>
+          <button class="btn difficulty medium" type="button" hidden>Media</button>
+          <button class="btn difficulty difficult" type="button" hidden>Alta</button>
 
+          <button class="btn opponent" type="button">Avversario</button>
+          <button class="btn opponent commodore" type="button" hidden>Commodore</button>
+          <button class="btn opponent deep-blue" type="button" hidden>Deep Blue</button>
+          <button class="btn opponent fugaku" type="button" hidden>Fugaku</button>
+          <h1>JS AGAINST HUMANITY</h1>
+          <p>Il codice ti tiene prigioniero... solo trovando il numero corretto (compreso fra 1 e 100) potrai sfuggire
+              al
+              controllo del sistema e ottenere la libertà</p>
+      </div>
+
+
+      <div class="main-content">
+          <div class="game d-flex flex-column justify-content-center align-items-start">
+              <div class="number"><i class="fas fa-question"></i></div>
+              <div class="messages">
+                  <p class="time"></p>
+                  <p>Tentativi di decifratura: <span class="tries">0</span></p>
+                  <p>Tentativi dell'AI: <span class="AI-tries">0</span></p>
+                  <p class="response"></p>
+              </div>
+              <input class="input" type="number" min="1" max="100">
+              <div class="buttons">
+                  <button class="btn start" type="button">Tenta la fuga</button>
+                  <button class="btn check" type="button" disabled>Prova il numero</button>
+              </div>
+
+          </div>
+      </div>
+  </div>
+  <!----------------- FERRERO HTML CODE ENDS HERE ----------------->
+
+<!--Inizio codice Imane-->
 <div class="page" id="imane">
   <h1 class="titoloImane" >Imane's Memory Game</h1>
   <div id="memory_board" ></div>
 </div>
-
 <!-- Fine codice Imane-->
 
 
 
 
 
-</div>
+ </div>
   
 
+ <div class="table-container"></div>
 
+</div>
  
 
   <!-- JQUERY -->
