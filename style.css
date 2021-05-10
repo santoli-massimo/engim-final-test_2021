@@ -478,31 +478,44 @@ color: red;
   font-size: 60px;
   text-align: center;
   padding: 20px;
-  
 }
-
 div#memory_board{
-
-width:100%	;
-height:50%;
-margin:0 auto;
-
+  width:100%	;
+  height:50%;
+  margin:0 auto;
 }
-
 div#memory_board > div{
-background: url(icons/santoliM.jpg) no-repeat;
-border:#000 2px solid;
-width:150px;
-
-height:150px;
-float:left;
-margin:10px;
-padding:10px;
-font-size:74px;
-cursor:pointer;
-text-align:center;
+  background: url(icons/santoliM.jpg) no-repeat;
+  border:#000 2px solid;
+  width:150px;
+  height:150px;
+  float:left;
+  margin:10px;
+  padding:10px;
+  font-size:74px;
+  cursor:pointer;
+  text-align:center;
 }
-
+#buttonI{
+  height: 50px;
+  width: 130px;
+  display: block; 
+  margin: 0 auto; 
+  -moz-border-radius: 8px;
+  -webkit-border-radius: 8px;
+  border-radius: 8px;
+  background: #0095cd;
+  background: -webkit-linear-gradient(top, #0078a5, #00adee);
+  background: -moz-linear-gradient(top, #0078a5, #00adee);
+  background: -ms-linear-gradient(top, #0078a5, #00adee);
+  background: -o-linear-gradient(top, #0078a5, #00adee);
+  background: linear-gradient(top, #0078a5, #00adee);
+  font-size: 20px;
+}
+#buttonI:hover {
+  background:aqua;
+  font-style: italic;
+}
 
 /* Finisce il codice di Imane*/
 

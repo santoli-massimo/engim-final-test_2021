@@ -80,7 +80,7 @@ function nouriScripts() {
     })
     return text.join('');
   }
-  
+
   // Caculate how many times the text was repeated
   function repeatedTime(text) {
     let repeatedTime = 0;
@@ -145,22 +145,22 @@ nouriScripts();
 //Inizia il codice di Luca Tabbia
 
 
-let campoSantoliTbody= document.querySelector("#campo-santoli-tbody")
-let campoSantoliTbodyCover= document.querySelector("#campo-santoli-tbody-cover")
-let campoSantoliStart= document.querySelector("#send-creation-table")
-let campoSantoliStatement= document.querySelector("#cs-h2-statement")
-let campoSantoliLostTimes= 0
-let campoSantoliWinTimes= 0
-let safeCells= 0
-let safeCellsClicked=0
+let campoSantoliTbody = document.querySelector("#campo-santoli-tbody")
+let campoSantoliTbodyCover = document.querySelector("#campo-santoli-tbody-cover")
+let campoSantoliStart = document.querySelector("#send-creation-table")
+let campoSantoliStatement = document.querySelector("#cs-h2-statement")
+let campoSantoliLostTimes = 0
+let campoSantoliWinTimes = 0
+let safeCells = 0
+let safeCellsClicked = 0
 
 //creazione delle tabelle sovrapposte
-campoSantoliStart.addEventListener('click', function(e){
+campoSantoliStart.addEventListener('click', function (e) {
   e.preventDefault()
-  campoSantoliTbody.innerHTML= ''
-  campoSantoliTbodyCover.innerHTML= ''
-  safeCellsClicked=0
-  safeCells=0
+  campoSantoliTbody.innerHTML = ''
+  campoSantoliTbodyCover.innerHTML = ''
+  safeCellsClicked = 0
+  safeCells = 0
   //creazione tabelle
   createTablesCs()
   //gestione dei valori randomici
@@ -169,63 +169,63 @@ campoSantoliStart.addEventListener('click', function(e){
 
 //funzione per la creazione di tabelle
 
-function createTablesCs(){
-  if(campoSantoliStart.innerHTML=="Riprova!"){
-    campoSantoliStatement.style.visibility= "hidden" 
-    campoSantoliTbodyCover.style.visibility= "visible"
+function createTablesCs() {
+  if (campoSantoliStart.innerHTML == "Riprova!") {
+    campoSantoliStatement.style.visibility = "hidden"
+    campoSantoliTbodyCover.style.visibility = "visible"
   }
-  let difficulty= difficultyForCs()
-  if(document.querySelector("#number-of-cells").value<10){
-    document.querySelector("#number-of-cells").value=10
+  let difficulty = difficultyForCs()
+  if (document.querySelector("#number-of-cells").value < 10) {
+    document.querySelector("#number-of-cells").value = 10
   }
-  if(document.querySelector("#number-of-cells").value>200){
-    document.querySelector("#number-of-cells").value=200
+  if (document.querySelector("#number-of-cells").value > 200) {
+    document.querySelector("#number-of-cells").value = 200
   }
-  let colsAndRows= document.querySelector("#number-of-cells").value
+  let colsAndRows = document.querySelector("#number-of-cells").value
   //creazione tabella con i numeri e le mine
-  for(let i=0; i<colsAndRows; i++){
-    let tableRowCs= document.createElement("tr")
-    for(let j=0;j<colsAndRows;j++){
-      let mapcell= document.createElement("td")
+  for (let i = 0; i < colsAndRows; i++) {
+    let tableRowCs = document.createElement("tr")
+    for (let j = 0; j < colsAndRows; j++) {
+      let mapcell = document.createElement("td")
       mapcell.classList.add("cs-cell")
-      mapcell.id= i+"-"+j+"index-cell"
-      if(randomNumberForCs(difficulty)==0){
-        mapcell.innerHTML= ""
-        safeCells +=1
-      }else {
-        mapcell.innerHTML= "<i class='fas fa-syringe'></i>"
+      mapcell.id = i + "-" + j + "index-cell"
+      if (randomNumberForCs(difficulty) == 0) {
+        mapcell.innerHTML = ""
+        safeCells += 1
+      } else {
+        mapcell.innerHTML = "<i class='fas fa-syringe'></i>"
       }
       tableRowCs.appendChild(mapcell)
     }
     campoSantoliTbody.appendChild(tableRowCs)
   }
   //creazione tabella che copre la prima
-  
-  for(let i=0; i<colsAndRows; i++){
-    let tableRowCscover= document.createElement("tr")
-    for(let j=0;j<colsAndRows;j++){
-      let mapcellcover= document.createElement("td")
-      mapcellcover.addEventListener('click', function(){
-        let id= this.id
-        if(document.getElementById(id.slice(0,id.search("-cover"))).innerHTML!='<i class="fas fa-syringe"></i>'){
-          safeCellsClicked+= noShowForCs(id)
-        }else{
+
+  for (let i = 0; i < colsAndRows; i++) {
+    let tableRowCscover = document.createElement("tr")
+    for (let j = 0; j < colsAndRows; j++) {
+      let mapcellcover = document.createElement("td")
+      mapcellcover.addEventListener('click', function () {
+        let id = this.id
+        if (document.getElementById(id.slice(0, id.search("-cover"))).innerHTML != '<i class="fas fa-syringe"></i>') {
+          safeCellsClicked += noShowForCs(id)
+        } else {
           youLostCs()
         }
-        if(safeCellsClicked==safeCells){
+        if (safeCellsClicked == safeCells) {
           youWinCs()
         }
       })
-      mapcellcover.addEventListener('contextmenu', function(e){
+      mapcellcover.addEventListener('contextmenu', function (e) {
         e.preventDefault()
-        if(this.innerHTML== ""){
-          this.innerHTML= "<i class='fas fa-hospital'></i>"
-        }else{
-          this.innerHTML= ""
+        if (this.innerHTML == "") {
+          this.innerHTML = "<i class='fas fa-hospital'></i>"
+        } else {
+          this.innerHTML = ""
         }
       })
       mapcellcover.classList.add("cs-cell-cover")
-      mapcellcover.id=i+"-"+j+"index-cell-cover"
+      mapcellcover.id = i + "-" + j + "index-cell-cover"
       tableRowCscover.appendChild(mapcellcover)
     }
     campoSantoliTbodyCover.appendChild(tableRowCscover)
@@ -234,48 +234,48 @@ function createTablesCs(){
 
 
 //funzione per difficoltà
-function difficultyForCs(){
-  if(document.querySelector("#easy-difficulty-cs").checked){
+function difficultyForCs() {
+  if (document.querySelector("#easy-difficulty-cs").checked) {
     return document.querySelector("#easy-difficulty-cs").value
   }
-  if(document.querySelector("#medium-difficulty-cs").checked){
+  if (document.querySelector("#medium-difficulty-cs").checked) {
     return document.querySelector("#medium-difficulty-cs").value
   }
-  if(document.querySelector("#hard-difficulty-cs").checked){
+  if (document.querySelector("#hard-difficulty-cs").checked) {
     return document.querySelector("#hard-difficulty-cs").value
   }
 }
 
 
 //funzione per nascondere le celle di copertura
-function noShowForCs(id){
-  let arrayIdCs= [id.slice(0, id.search("-cover"))]
-  document.getElementById(id).style.visibility= "hidden"
-  for(id of arrayIdCs){
-    if(document.getElementById(id).innerHTML== ''){
-      let rowIndex= parseInt(id.slice(0, id.search("-")))
-      let colIndex= parseInt(id.slice((id.search("-")+1), id.search("index")))
-      if(rowIndex>0 && document.getElementById((rowIndex-1)+"-"+colIndex+"index-cell-cover").style.visibility!= "hidden"){
-        document.getElementById((rowIndex-1)+"-"+colIndex+"index-cell-cover").style.visibility= "hidden"
-        arrayIdCs.push((rowIndex-1)+"-"+colIndex+"index-cell")
+function noShowForCs(id) {
+  let arrayIdCs = [id.slice(0, id.search("-cover"))]
+  document.getElementById(id).style.visibility = "hidden"
+  for (id of arrayIdCs) {
+    if (document.getElementById(id).innerHTML == '') {
+      let rowIndex = parseInt(id.slice(0, id.search("-")))
+      let colIndex = parseInt(id.slice((id.search("-") + 1), id.search("index")))
+      if (rowIndex > 0 && document.getElementById((rowIndex - 1) + "-" + colIndex + "index-cell-cover").style.visibility != "hidden") {
+        document.getElementById((rowIndex - 1) + "-" + colIndex + "index-cell-cover").style.visibility = "hidden"
+        arrayIdCs.push((rowIndex - 1) + "-" + colIndex + "index-cell")
       }
-      if(colIndex>0 && document.getElementById(rowIndex+"-"+(colIndex-1)+"index-cell-cover").style.visibility!= "hidden"){
-        arrayIdCs.push(rowIndex+"-"+(colIndex-1)+"index-cell")
-        document.getElementById(rowIndex+"-"+(colIndex-1)+"index-cell-cover").style.visibility= "hidden"
+      if (colIndex > 0 && document.getElementById(rowIndex + "-" + (colIndex - 1) + "index-cell-cover").style.visibility != "hidden") {
+        arrayIdCs.push(rowIndex + "-" + (colIndex - 1) + "index-cell")
+        document.getElementById(rowIndex + "-" + (colIndex - 1) + "index-cell-cover").style.visibility = "hidden"
       }
-      if(rowIndex<document.querySelector("#number-of-cells").value-1 && document.getElementById((rowIndex+1)+"-"+colIndex+"index-cell-cover").style.visibility!= "hidden"){
-        arrayIdCs.push((rowIndex+1)+"-"+colIndex+"index-cell")
-        document.getElementById((rowIndex+1)+"-"+colIndex+"index-cell-cover").style.visibility= "hidden"
+      if (rowIndex < document.querySelector("#number-of-cells").value - 1 && document.getElementById((rowIndex + 1) + "-" + colIndex + "index-cell-cover").style.visibility != "hidden") {
+        arrayIdCs.push((rowIndex + 1) + "-" + colIndex + "index-cell")
+        document.getElementById((rowIndex + 1) + "-" + colIndex + "index-cell-cover").style.visibility = "hidden"
       }
-      if(colIndex<document.querySelector("#number-of-cells").value-1 && document.getElementById(rowIndex+"-"+(colIndex+1)+"index-cell-cover").style.visibility!= "hidden"){
-        arrayIdCs.push(rowIndex+"-"+(colIndex+1)+"index-cell")
-        document.getElementById(rowIndex+"-"+(colIndex+1)+"index-cell-cover").style.visibility= "hidden"
+      if (colIndex < document.querySelector("#number-of-cells").value - 1 && document.getElementById(rowIndex + "-" + (colIndex + 1) + "index-cell-cover").style.visibility != "hidden") {
+        arrayIdCs.push(rowIndex + "-" + (colIndex + 1) + "index-cell")
+        document.getElementById(rowIndex + "-" + (colIndex + 1) + "index-cell-cover").style.visibility = "hidden"
       }
     }
   }
-  let cells= 0
-  for(let i=0; i<arrayIdCs.length; i++){
-    cells+=1
+  let cells = 0
+  for (let i = 0; i < arrayIdCs.length; i++) {
+    cells += 1
   }
   return cells
 }
@@ -283,69 +283,69 @@ function noShowForCs(id){
 
 
 //funzione che gestisce il fallimento
-function youLostCs(){
-  campoSantoliTbodyCover.style.visibility= "hidden"
-  campoSantoliStart.innerHTML= "Riprova!"
-  campoSantoliStatement.innerHTML= "Hai perso!"
-  campoSantoliStatement.style.color= "red"
-  campoSantoliStatement.style.visibility= "visible"
-  let youLostLabel= document.getElementById("label-times-lost-cs")
-  youLostLabel.style.visibility= "visible"
-  let youLostTimes= document.getElementById("times-lost-cs")
-  campoSantoliLostTimes+= 1
-  if(campoSantoliLostTimes==1){
-    youLostTimes.innerHTML= campoSantoliLostTimes + " volta"
+function youLostCs() {
+  campoSantoliTbodyCover.style.visibility = "hidden"
+  campoSantoliStart.innerHTML = "Riprova!"
+  campoSantoliStatement.innerHTML = "Hai perso!"
+  campoSantoliStatement.style.color = "red"
+  campoSantoliStatement.style.visibility = "visible"
+  let youLostLabel = document.getElementById("label-times-lost-cs")
+  youLostLabel.style.visibility = "visible"
+  let youLostTimes = document.getElementById("times-lost-cs")
+  campoSantoliLostTimes += 1
+  if (campoSantoliLostTimes == 1) {
+    youLostTimes.innerHTML = campoSantoliLostTimes + " volta"
   }
-  else{
-    youLostTimes.innerHTML= campoSantoliLostTimes + " volte"
+  else {
+    youLostTimes.innerHTML = campoSantoliLostTimes + " volte"
   }
-  youLostTimes.style.visibility= "visible"
+  youLostTimes.style.visibility = "visible"
 }
 
 
-function youWinCs(){
-  campoSantoliTbodyCover.style.visibility= "hidden"
-  campoSantoliStart.innerHTML= "Riprova!"
-  campoSantoliStatement.innerHTML= "Hai vinto!"
-  campoSantoliStatement.style.color= "limegreen"
-  campoSantoliStatement.style.visibility= "visible"
-  let youWinLabel= document.getElementById("label-times-win-cs")
-  youWinLabel.style.visibility= "visible"
-  let youWinTimes= document.getElementById("times-win-cs")
-  campoSantoliWinTimes+= 1
-  if(campoSantoliWinTimes==1){
-  youWinTimes.innerHTML= campoSantoliWinTimes + " volta"
+function youWinCs() {
+  campoSantoliTbodyCover.style.visibility = "hidden"
+  campoSantoliStart.innerHTML = "Riprova!"
+  campoSantoliStatement.innerHTML = "Hai vinto!"
+  campoSantoliStatement.style.color = "limegreen"
+  campoSantoliStatement.style.visibility = "visible"
+  let youWinLabel = document.getElementById("label-times-win-cs")
+  youWinLabel.style.visibility = "visible"
+  let youWinTimes = document.getElementById("times-win-cs")
+  campoSantoliWinTimes += 1
+  if (campoSantoliWinTimes == 1) {
+    youWinTimes.innerHTML = campoSantoliWinTimes + " volta"
   }
-  else{
-    youWinTimes.innerHTML= campoSantoliWinTimes + " volte"
+  else {
+    youWinTimes.innerHTML = campoSantoliWinTimes + " volte"
   }
-  youWinTimes.style.visibility= "visible"
+  youWinTimes.style.visibility = "visible"
 }
 
 
 //generazione numeri randomici
-function randomNumberForCs(value){
-  let n= 0
-  switch(value){
+function randomNumberForCs(value) {
+  let n = 0
+  switch (value) {
     case "easy":
-      n=Math.floor(Math.random()*(12-0))+ 0
-      if(n<11){
+      n = Math.floor(Math.random() * (12 - 0)) + 0
+      if (n < 11) {
         return 0
-      }else {
+      } else {
         return 10
       }
     case "medium":
-      n=Math.floor(Math.random()*(9-0))+ 0
-      if(n<8){
+      n = Math.floor(Math.random() * (9 - 0)) + 0
+      if (n < 8) {
         return 0
-      }else {
+      } else {
         return 10
       }
     case "hard":
-      n=Math.floor(Math.random()*(6-0))+ 0
-      if(n<5){
+      n = Math.floor(Math.random() * (6 - 0)) + 0
+      if (n < 5) {
         return 0
-      }else {
+      } else {
         return 10
       }
     default:
@@ -356,61 +356,61 @@ function randomNumberForCs(value){
 
 
 //funzione per calcolare vicinanza alla cura
-function getRealNumberForCs(){
-  let colsAndRows= document.querySelector("#number-of-cells").value -1
-  for(let i=0; i<=colsAndRows; i++){
-    for(let j=0; j<=colsAndRows; j++){
-      if(document.getElementById(i+"-"+j+"index-cell").innerHTML ==""){ 
-        
-        let counter=0
-        if(i<colsAndRows && document.getElementById((i+1)+"-"+j+"index-cell").innerHTML=='<i class="fas fa-syringe"></i>'){
-          counter+=1
+function getRealNumberForCs() {
+  let colsAndRows = document.querySelector("#number-of-cells").value - 1
+  for (let i = 0; i <= colsAndRows; i++) {
+    for (let j = 0; j <= colsAndRows; j++) {
+      if (document.getElementById(i + "-" + j + "index-cell").innerHTML == "") {
+
+        let counter = 0
+        if (i < colsAndRows && document.getElementById((i + 1) + "-" + j + "index-cell").innerHTML == '<i class="fas fa-syringe"></i>') {
+          counter += 1
         }
-        if(j<colsAndRows && document.getElementById(i+"-"+(j+1)+"index-cell").innerHTML=='<i class="fas fa-syringe"></i>'){
-          counter+=1
+        if (j < colsAndRows && document.getElementById(i + "-" + (j + 1) + "index-cell").innerHTML == '<i class="fas fa-syringe"></i>') {
+          counter += 1
         }
-        if(i>0 && document.getElementById((i-1)+"-"+j+"index-cell").innerHTML=='<i class="fas fa-syringe"></i>'){
-          counter+=1
+        if (i > 0 && document.getElementById((i - 1) + "-" + j + "index-cell").innerHTML == '<i class="fas fa-syringe"></i>') {
+          counter += 1
         }
-        if(j>0 && document.getElementById(i+"-"+(j-1)+"index-cell").innerHTML=='<i class="fas fa-syringe"></i>'){
-          counter+=1
+        if (j > 0 && document.getElementById(i + "-" + (j - 1) + "index-cell").innerHTML == '<i class="fas fa-syringe"></i>') {
+          counter += 1
         }
-        if(i<colsAndRows && j<colsAndRows && document.getElementById((i+1)+"-"+(j+1)+"index-cell").innerHTML=='<i class="fas fa-syringe"></i>'){
-          counter+=1
+        if (i < colsAndRows && j < colsAndRows && document.getElementById((i + 1) + "-" + (j + 1) + "index-cell").innerHTML == '<i class="fas fa-syringe"></i>') {
+          counter += 1
         }
-        if(i<colsAndRows && j>0 && document.getElementById((i+1)+"-"+(j-1)+"index-cell").innerHTML=='<i class="fas fa-syringe"></i>'){
-          counter+=1
+        if (i < colsAndRows && j > 0 && document.getElementById((i + 1) + "-" + (j - 1) + "index-cell").innerHTML == '<i class="fas fa-syringe"></i>') {
+          counter += 1
         }
-        if(i>0 && j>0 && document.getElementById((i-1)+"-"+(j-1)+"index-cell").innerHTML=='<i class="fas fa-syringe"></i>'){
-          counter+=1
+        if (i > 0 && j > 0 && document.getElementById((i - 1) + "-" + (j - 1) + "index-cell").innerHTML == '<i class="fas fa-syringe"></i>') {
+          counter += 1
         }
-        if(i>0 && j<colsAndRows && document.getElementById((i-1)+"-"+(j+1)+"index-cell").innerHTML=='<i class="fas fa-syringe"></i>'){
-          counter+=1
+        if (i > 0 && j < colsAndRows && document.getElementById((i - 1) + "-" + (j + 1) + "index-cell").innerHTML == '<i class="fas fa-syringe"></i>') {
+          counter += 1
         }
-        switch (counter){
+        switch (counter) {
           case 1:
-            document.getElementById(i+"-"+j+"index-cell").innerHTML='<i class="fas fa-user"></i>'
+            document.getElementById(i + "-" + j + "index-cell").innerHTML = '<i class="fas fa-user"></i>'
             break
           case 2:
-            document.getElementById(i+"-"+j+"index-cell").innerHTML='<i class="fas fa-user-friends"></i>'
+            document.getElementById(i + "-" + j + "index-cell").innerHTML = '<i class="fas fa-user-friends"></i>'
             break
           case 3:
-            document.getElementById(i+"-"+j+"index-cell").innerHTML='<i class="fas fa-users"></i>'
+            document.getElementById(i + "-" + j + "index-cell").innerHTML = '<i class="fas fa-users"></i>'
             break
           case 4:
-            document.getElementById(i+"-"+j+"index-cell").innerHTML='<i class="fas fa-car"></i>'
+            document.getElementById(i + "-" + j + "index-cell").innerHTML = '<i class="fas fa-car"></i>'
             break
           case 5:
-            document.getElementById(i+"-"+j+"index-cell").innerHTML='<i class="fas fa-bus"></i>'
+            document.getElementById(i + "-" + j + "index-cell").innerHTML = '<i class="fas fa-bus"></i>'
             break
           case 6:
-            document.getElementById(i+"-"+j+"index-cell").innerHTML='<i class="fas fa-store"></i>'
+            document.getElementById(i + "-" + j + "index-cell").innerHTML = '<i class="fas fa-store"></i>'
             break
           case 7:
-            document.getElementById(i+"-"+j+"index-cell").innerHTML='<i class="fas fa-building"></i>'
+            document.getElementById(i + "-" + j + "index-cell").innerHTML = '<i class="fas fa-building"></i>'
             break
           case 8:
-            document.getElementById(i+"-"+j+"index-cell").innerHTML='<i class="fas fa-church"></i>'
+            document.getElementById(i + "-" + j + "index-cell").innerHTML = '<i class="fas fa-church"></i>'
             break
         }
       }
@@ -648,46 +648,46 @@ function controlloGiulio() {
 
   //funzione che esegue i vari controlli
   function control(firstPassword, secondPassword) {
-      if (firstPassword !== secondPassword) {
-          errore.innerHTML = "**Le password non coincidono";
-          return;
-      }
+    if (firstPassword !== secondPassword) {
+      errore.innerHTML = "**Le password non coincidono";
+      return;
+    }
 
-      if (firstPassword.length < 8) {
-          errore.innerHTML = "**La password deve essere almeno di 8 caratteri";
-          return;
-      }
+    if (firstPassword.length < 8) {
+      errore.innerHTML = "**La password deve essere almeno di 8 caratteri";
+      return;
+    }
 
-      if (!maiuscole.test(firstPassword)) {
-          errore.innerHTML = "**La password deve contenere almeno un carattere maiuscolo";
-          return;
-      }
+    if (!maiuscole.test(firstPassword)) {
+      errore.innerHTML = "**La password deve contenere almeno un carattere maiuscolo";
+      return;
+    }
 
-      if (!minuscole.test(firstPassword)) {
-          errore.innerHTML = "**La password deve contenere almeno un carattere minuscolo";
-          return;
-      }
+    if (!minuscole.test(firstPassword)) {
+      errore.innerHTML = "**La password deve contenere almeno un carattere minuscolo";
+      return;
+    }
 
-      if (!numeri.test(firstPassword)) {
-          errore.innerHTML = "**La password deve contenere almeno un numero";
-          return;
-      }
+    if (!numeri.test(firstPassword)) {
+      errore.innerHTML = "**La password deve contenere almeno un numero";
+      return;
+    }
 
-      if (!caratteri.test(firstPassword)) {
-          errore.innerHTML = "**La password deve contenere almeno un carattere speciale";
-          return;
-      }
-      
-      // se la password coincide da messaggio di password corretta
-      errore.innerHTML = "PASSWORD CORRETTA";
+    if (!caratteri.test(firstPassword)) {
+      errore.innerHTML = "**La password deve contenere almeno un carattere speciale";
+      return;
+    }
+
+    // se la password coincide da messaggio di password corretta
+    errore.innerHTML = "PASSWORD CORRETTA";
   }
 
   // al click del mouse da la risposta
-  send.addEventListener('click',(event) => {
-      let firstPassword = pwd.value;
-      let secondPassword = pwd2.value;
-      event.preventDefault();
-      control(firstPassword, secondPassword);
+  send.addEventListener('click', (event) => {
+    let firstPassword = pwd.value;
+    let secondPassword = pwd2.value;
+    event.preventDefault();
+    control(firstPassword, secondPassword);
   })
 
 }
@@ -698,88 +698,88 @@ controlloGiulio();
 
 /* Inizia il codice di Imane */
 
-//array con le carte da gioco si possono aggiungere altri elementi l'importante che ci sia sempre il doppione
-var arrayMemoryI = ['||','||','&&','&&','==','==','=','=','++','++','%','%','/','/','!=','!=','--','--'];
-//array di appoggio per confrontare i valori delle due carte
-var valoriMemoryI = [];
-//array di appoggio per conservare il loro relativo id
-var valoriIdMemory = [];
-
+//array con le carte da gioco si possono aggiungere o togliere altri elementi, l'importante è che ci siano due valori uguali
+var arrayMemoryI = ['||', '||', '&&', '&&', '==', '==','=','=','++','++','%','%','/','/','!=','!=','--','--'];
+var valoriMemoryI = [];//array di appoggio per confrontare i valori delle due carte
+var valoriIdMemory = [];//array di appoggio per conservare il loro relativo id
 var carteGirateI = 0;
-console.log(arrayMemoryI.length)
-//funzione per randomizzare i valori del mio array
 
-
-
- function mischiaCarte(array){
-    var i = array.length, j, temp;
-    while(--i> 0){
-        j = Math.floor(Math.random() * (i+1));
-        temp = array[j];
-        array[j] = array[i];
-        array[i] = temp;
-    }
+//funzione per randomizzare i valori del mio array di carte
+function mischiaCarteI(arrayI) {
+  var i = arrayI.length, j, temp;
+  while (--i > 0) {
+    j = Math.floor(Math.random() * (i + 1));
+    temp = arrayI[j];
+    arrayI[j] = arrayI[i];
+    arrayI[i] = temp;
+  }
 }
-//funzione crea pagina html con le carte da gioco gia randomizzate
-function newBoard(){
-	carteGirateI = 0;
-	var tavoloGiocoImane = '';
-  mischiaCarte(arrayMemoryI);
-    for(var i = 0; i < arrayMemoryI.length; i++){
-		tavoloGiocoImane += '<div id="carta_'+i+'" onclick="giraCarteI(this,\''+arrayMemoryI
-	[i]+'\')"></div>';
-	}
 
-	document.getElementById('memory_board').innerHTML = tavoloGiocoImane;
+//funzione crea pagina html con le carte da gioco gia randomizzate e il pulsante restart
+function newBoard() {
+  carteGirateI = 0;
+  var tavoloGiocoImane = '';
+  mischiaCarteI(arrayMemoryI);
+  for (var i = 0; i < arrayMemoryI.length; i++) {
+    tavoloGiocoImane += '<div id="carta_' + i + '" onclick="giraCarteI(this,\'' + arrayMemoryI
+    [i] + '\')"></div>';
+  }
+  tavoloGiocoImane += '<button id="buttonI" onclick="restart()">RESTART</button>';
+  document.getElementById('memory_board').innerHTML = tavoloGiocoImane;
 }
 
 //funzione che capovolge le carte quando non sono uguali
-function rigiraCarteI(){
-	var carta1 = document.getElementById(valoriIdMemory[0]);
-	var carta2 = document.getElementById(valoriIdMemory[1]);
-	carta1.style.background = 'url(icons/santoliM.jpg) no-repeat';
-	carta1.innerHTML = "";
-	carta2.style.background = 'url(icons/santoliM.jpg) no-repeat';
-	carta2.innerHTML = "";
-	// pulisco entrambi gli array di supporto
-	valoriMemoryI = [];
-	valoriIdMemory = [];
-}
-//funzione logica che gestisce l'intero gioco e si ha ad ogni click sulla carta
-function giraCarteI(carta,val){
-	if(carta.innerHTML == "" && valoriMemoryI.length < 2){
-		carta.style.background = 'lightskyblue';
-		carta.innerHTML = val;
-		//se non sono girate carte inserisce nell'array d'appoggio il valore della prima carta girata
-		//e nel secondo array l'id del div della carta
-		if(valoriMemoryI.length == 0){
-           
-			valoriMemoryI.push(val);
-			valoriIdMemory.push(carta.id);
-			console.log(carta.id);
-		} else if(valoriMemoryI.length == 1){
-			valoriMemoryI.push(val);
-			valoriIdMemory.push(carta.id);
-            //controlla se le tesser sono uguali e se si incrementa il contatore di due
-			if(valoriMemoryI[0] == valoriMemoryI[1]){
-				carteGirateI += 2;
-				//pulire entrambi gli array di supporto
-				valoriMemoryI = [];
-            	valoriIdMemory = [];
-                //controlla se tutte le carte siano girate o meno cosi o finisce la partrita o va avanti
-				if(carteGirateI == arrayMemoryI.length){
-					alert("Hai Vinto!!!!!! Se vuoi giocare di nuovo premi ok");
-					document.getElementById('memory_board').innerHTML = "";
-					newBoard();
-				}
-			    } else {
-				
-				setTimeout(rigiraCarteI, 700);
-			}
-		}
-	}
+function rigiraCarteI() {
+  var carta1 = document.getElementById(valoriIdMemory[0]);
+  var carta2 = document.getElementById(valoriIdMemory[1]);
+  carta1.style.background = 'url(icons/santoliM.jpg) no-repeat';
+  carta1.innerHTML = "";
+  carta2.style.background = 'url(icons/santoliM.jpg) no-repeat';
+  carta2.innerHTML = "";
+  // pulisco entrambi gli array di supporto
+  valoriMemoryI = [];
+  valoriIdMemory = [];
 }
 
+//funzione di restart:pulisce e fa ripartire il gioco
+function restart() {
+  document.getElementById('memory_board').innerHTML = "";
+  newBoard();
+}
+
+//funzione logica che gestisce l'intero gioco e si ha ad ogni click sulla carta
+function giraCarteI(carta, val) {
+  if (carta.innerHTML == "" && valoriMemoryI.length < 2) {
+    carta.style.background = 'lightskyblue';
+    carta.innerHTML = val;
+    //se non sono girate carte inserisce nell'array d'appoggio il valore della prima carta girata
+    //e nel secondo array l'id del div della carta
+    if (valoriMemoryI.length == 0) {
+      valoriMemoryI.push(val);
+      valoriIdMemory.push(carta.id);
+    } else if (valoriMemoryI.length == 1) {
+      valoriMemoryI.push(val);
+      valoriIdMemory.push(carta.id);
+      //controlla se le tessere sono uguali e se si incrementa il contatore di due altrimenti rigira le carte
+      if (valoriMemoryI[0] == valoriMemoryI[1]) {
+        carteGirateI += 2;
+        //pulire entrambi gli array di supporto
+        valoriMemoryI = [];
+        valoriIdMemory = [];
+        //controlla se tutte le carte siano girate o meno cosi o finisce la partita o va avanti
+        //ho messo il setTimeout altrimenti non girava l'ultima carta prima della vittoria
+        if (carteGirateI == arrayMemoryI.length) {
+          setTimeout( () => {
+            alert("Hai Vinto!!!!!! Se vuoi giocare di nuovo premi ok");
+            restart();
+          }, 200)
+        }
+      } else {
+        setTimeout(rigiraCarteI, 700);
+      }
+    }
+  }
+}
 newBoard();
 
 /* Finisce il codice di Imane*/
