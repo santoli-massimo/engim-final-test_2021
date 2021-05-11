@@ -2,8 +2,20 @@ h1 {
     color: #1d1d6a;
 }
 
+.navbar{
+    overflow-x: scroll;
+}
+
+.nav-item {
+    font-size:0.9rem;
+    border:none;
+    background: rgba(0,0,0,0);
+    padding: 0.5rem 0.3rem;
+}
+
 .page {
     display: none;
+    padding-top:2rem;
 }
 
 .page:first-child {
