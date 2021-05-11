@@ -867,12 +867,11 @@ div#memory_board > div{
   box-sizing: border-box;
 }
 
-body {
-  background: #87afc9;
+/* body {
   padding-top: 5%;
   font-size: 5px;
   font-family: 'Open Sans', sans-serif;
-}
+} */
 
 .wrapper {
   max-width: 800px;
@@ -1039,6 +1038,7 @@ body {
   margin: 0 auto;
   display: block;
   margin-top: 50px;
+
   padding: px;
   margin-bottom: 40px;
 }
@@ -1050,7 +1050,7 @@ body {
 }
 
 .row{
-  margin-left: 5px;
+  margin-left: 0px;
 }
 
 /*Ahmed css code finished here*/

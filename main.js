@@ -1334,4 +1334,19 @@ function perc() {
 function cancella() {
     document.getElementById("operazioni").value = "";
 }
+
+
+var button = document.getElementById('button');
+
+var element = document.getElementById("screen");
+element.style.display = 'none';
+
+
+
+button.addEventListener('click', function(){
+  element.style.display = '';
+   element.classList.add("screen");
+  element.classList.add("pulsante");
+  element.classList.add("display");
+});
 /* Ahmed code finisched here*/
