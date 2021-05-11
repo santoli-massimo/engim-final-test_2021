@@ -288,7 +288,7 @@ in questione rimarrà sempre visibile come prima riga indipendentemente dalla pa
 Cliccando su una riga selezionata verra deselezionata.
 
 
-### Tabella da lista di oggetti Dinamici (75p-100p) - PRENOTATO DA:
+### Tabella da lista di oggetti Dinamici (75p-100p) - PRENOTATO DA:MONTASSAR GHEFIRI
 BASE DA CUI PARTIRE: 'Tabella da lista di oggetti'
 Creare un form che permetta di aggiungere un elemento alla tabella
 
@@ -305,7 +305,7 @@ Aggiungere un unico bottone rimuovi sopra la tabella.
 Alla pressione del bottone le righe selezionate vengono eliminate
 
 
-### Tabella da lista di oggetti Sortabile (80p-100p) - PRENOTATO DA:MONTASSAR GHEFIRI
+### Tabella da lista di oggetti Sortabile (80p-100p) - PRENOTATO DA:
 BASE DA CUI PARTIRE: 'Tabella da lista di oggetti'
 Al click su un header di una colonna questo vinene selezionato(cambia stile).
 Ordinare gli elementi in base alla colonna cliccata.
