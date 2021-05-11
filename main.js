@@ -1207,3 +1207,109 @@ simboliIdDS.addEventListener("click", function () {
 });
 
 /* Fine codice Daniele*/
+
+/* Inizio codice Montassar*/
+
+    // Request Api
+const url = 'https://reqres.in/api/users';
+
+fetch('https://reqres.in/api/users')
+  .then(res => res.json())
+  .then(data => users = data.data)
+  .then(() => displayData(users))
+
+// display data 
+  function displayData(users){
+    for(let user of users ){
+    let table = document.getElementById("table_gh").getElementsByTagName('tbody')[0];
+    let row = table.insertRow(table.length);
+    rowCell1 = row.insertCell(0);
+    rowCell1.innerHTML = user.id;
+    rowCell2 = row.insertCell(1);
+    rowCell2.innerHTML = user.first_name;
+    rowCell3 = row.insertCell(2);
+    rowCell3.innerHTML = user.last_name;
+    rowCell4 = row.insertCell(3);
+    rowCell4.innerHTML = user.email;
+    rowCell4 = row.insertCell(4);
+    rowCell4.innerHTML = `<a onclick="deleteRow(this)">Delete</a>`;
+    }
+}
+
+// form submit eventListener
+let submitBtn = document.getElementById('submit');
+submitBtn.addEventListener('click',function(e){
+    submitForm(),
+    e.preventDefault();
+});
+
+let selectedRow = null;
+function submitForm() {
+        let formData = getFormData();
+        if(validate()){
+            setTable(formData);
+        }
+            
+        resetForm();
+}
+
+// get form from data 
+function getFormData() {
+    let formData = {};
+    formData["id"] = document.getElementById("id").value;
+    formData["fName"] = document.getElementById("fName").value;
+    formData["lName"] = document.getElementById("lName").value;
+    formData["email"] = document.getElementById("email").value;
+    return formData;
+}
+
+// fill table 
+function setTable(data) {
+    let table = document.getElementById("table_gh").getElementsByTagName('tbody')[0];
+    let row = table.insertRow(table.length);
+    rowCell1 = row.insertCell(0);
+    rowCell1.innerHTML = data.id;
+    rowCell2 = row.insertCell(1);
+    rowCell2.innerHTML = data.fName;
+    rowCell3 = row.insertCell(2);
+    rowCell3.innerHTML = data.lName;
+    rowCell4 = row.insertCell(3);
+    rowCell4.innerHTML = data.email;
+    rowCell4 = row.insertCell(4);
+    rowCell4.innerHTML = `<a onclick="deleteRow(this)">Delete</a>`;
+}
+
+// reset Form
+function resetForm() {
+    document.getElementById("id").value = "";
+    document.getElementById("fName").value = "";
+    document.getElementById("lName").value = "";
+    document.getElementById("email").value = "";
+    selectedRow = null;
+}
+
+//delete Row
+function deleteRow(td) {
+    if (confirm(' Are you sure?')) {
+        row = td.parentElement.parentElement;
+        document.getElementById("table_gh").deleteRow(row.rowIndex);
+        resetForm();
+    }
+}
+
+// form validation
+function validate() {
+    isValid = true;
+    if (document.getElementById("id").value == "") {
+        isValid = false;
+        document.getElementById("idValidator").classList.remove("hide-label");
+    } else {
+        isValid = true;
+        if (!document.getElementById("idValidator").classList.contains("hide-label"))
+            document.getElementById("idValidator").classList.add("hide-label");
+    }
+    return isValid;
+}
+
+
+/* Fine codice Montassar*/

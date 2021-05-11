@@ -779,4 +779,69 @@ div#memory_board > div{
 
 
 
+/* Inizio CSS Montassar*/
+.container_gh{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    padding: 50px;
+    width: 100%;
+}
+
+#form_gh input{
+    margin: 5px;
+    border: 1px solid #ccc;
+    border-radius: 0;
+    width: 75%;
+    padding: 10px;
+    float: left;
+    font-size: 16px;
+}
+ .submit-button{
+    width: 35%;
+    position: relative;
+    left: 200px;
+}
+
+#form_gh label.validator{
+    color:   red;
+    margin-left: 5px;
+}
+
+#form_gh .hide-label{
+    display:none;
+}
+
+#table_gh {
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    width : 78%;
+    float: right;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+#table_gh thead tr {
+    background-color: #009879;
+    color: #ffffff;
+    text-align: left;
+}
+#table_gh th,
+#table_gh td {
+    padding: 12px 15px;
+}
+#table_gh tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+#table_gh tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+#table_gh tbody tr:last-of-type {
+    border-bottom: 2px solid #009879;
+}
+/* Fine CSS Montassar*/
 
