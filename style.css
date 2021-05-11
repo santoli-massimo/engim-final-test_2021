@@ -857,3 +857,200 @@ div#memory_board > div{
 }
 /* Fine CSS Montassar*/
 
+
+/* Ahmed css code started here*/
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #87afc9;
+  padding-top: 5%;
+  font-size: 5px;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.wrapper {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.iphone {
+  position: relative;
+  background: #d8d6d6;
+  width: 45%;
+  height: 0;
+  padding-top: 95%;
+  margin: 0 auto;
+  border-radius: 3em;
+  border: #070707 solid 1px
+}
+
+.power {
+  position: absolute;
+  background: #585858;
+  width: 13%;
+  height: .5%;
+  top: -.5%;
+  right: 12%;
+  border-top-left-radius: .5em;
+  border-top-right-radius: .5em;
+}
+
+.lock {
+  position: absolute;
+  background: #585858;
+  width: 1%;
+  height: 5%;
+  top: 12.5%;
+  left: -1%;
+  border-top-left-radius: .5em;
+  border-bottom-left-radius: .5em;
+}
+
+.volume {
+  position: absolute;
+  background: #585858;
+  width: 1%;
+  height: 4%;
+  top: 23%;
+  left: -1%;
+  border-top-left-radius: .5em;
+  border-bottom-left-radius: .5em;
+}
+
+.volume.down{ top: 31%; }
+
+.camera {
+  position: absolute;
+  top: 4%;
+  left: 48.5%;
+  background: #1b1b1b;
+  width: 3%;
+  height: 0;
+  padding-top: 3%;
+  border-radius: 50%;
+}
+
+.speaker {
+  position: absolute;
+  top: 7%;
+  left: 42.5%;
+  background: #616060;
+  width: 15%;
+  height: 0;
+  padding-top: 3%;
+  border-radius: 1em;
+}
+
+
+.text {
+  font-size: 1.25rem;
+  text-align: center;
+  animation: unhide 5s;
+}
+
+.screen {
+  background-color: #070707;
+  width: 90%;
+  height: 75%;
+  position: absolute;
+  top: 12.5%;
+  left: 5%;
+  animation: lighten 5s;
+  border: #070707 solid 1px;
+}
+
+.button {
+  position: absolute;
+  bottom: 2.75%;
+  left: 42.5%;
+  background: #e9e7e7;
+  /* border: 1px solid #3f3f3f; */
+  width: 15%;
+  height: 0;
+  padding-top: 15%;
+  border-radius: 50%;
+  border: #070707 solid 1px;
+}
+
+.square {
+  position: absolute;
+  top: 27.5%;
+  left: 27.5%;
+  border: 2px solid #918e8e;
+  border-radius: .3em;
+  width: 45%;
+  height: 45%;
+}
+
+@media screen and (min-width: 28em ) {
+  body, .pulsante{ font-size: 8px; }
+}
+
+@media screen and (min-width: 34em ) {
+  body, .pulsante{ font-size: 10px; }
+}
+
+@media screen and (min-width: 48em ) {
+  body, .pulsante{ font-size: 14px; }
+}
+
+@keyframes lighten {
+  0%, 45% { background: #2f2f2f; }
+  65%, 100% { background: #070707; }
+}
+
+@keyframes unhide {
+  0%, 55% { opacity: 0 }
+  75%, 100% { opacity: 1 }
+}
+
+/* buttons */
+        .pulsante {
+          animation: unhide 5s;
+            background-color: grey;
+            color: #e4e7eb;
+            font-size: 23pt;
+            border: black;
+            border-radius: 50px 50px 50px 50px;
+            margin: 4px 2px;
+            height: 70px;
+            width: 70px;
+            font-family: 'Open Sans', sans-serif;
+            font-weight: bold;
+        }
+
+ 
+/* display */
+.display {
+  animation: unhide 5s;
+  font-family: 'Open Sans', sans-serif;
+  background: transparent;
+  color: white;
+  font-size: 50pt;
+  border: black;
+  width: 300px;
+  height: 60px;
+  margin: 0 auto;
+  display: block;
+  margin-top: 50px;
+  padding: px;
+  margin-bottom: 40px;
+}
+
+/* equal button */
+.uguale {
+  width: 70px;
+  margin-bottom: 50px;
+}
+
+.row{
+  margin-left: 5px;
+}
+
+/*Ahmed css code finished here*/

@@ -1313,3 +1313,25 @@ function validate() {
 
 
 /* Fine codice Montassar*/
+
+
+/* Ahmed code started here*/
+function n(dato) {
+    document.getElementById("operazioni").value += dato;
+}
+
+function risultato() {
+    document.getElementById("operazioni").value = eval(document.getElementById("operazioni").value);
+}
+
+function sqrt() {
+    document.getElementById("operazioni").value = Math.round(Math.sqrt(document.getElementById("operazioni").value) * 1000) / 1000;
+}
+
+function perc() {
+    document.getElementById("operazioni").value = eval(document.getElementById("operazioni").value) / 100;
+}
+function cancella() {
+    document.getElementById("operazioni").value = "";
+}
+/* Ahmed code finisched here*/
