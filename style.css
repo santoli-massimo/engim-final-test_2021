@@ -504,9 +504,9 @@ h1 {
 
 .titoloImane{
   color: blue;
-  font-size: 60px;
+  font-size: 50px;
   text-align: center;
-  padding: 20px;
+  padding: 10px;
 }
 div#memory_board{
   width:100%	;
@@ -514,7 +514,7 @@ div#memory_board{
   margin:0 auto;
 }
 div#memory_board > div{
-  background: url(icons/santoliM.jpg) no-repeat;
+  background: url(images/santoliM.jpg) no-repeat;
   border:#000 2px solid;
   width:150px;
   height:150px;

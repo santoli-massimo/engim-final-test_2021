@@ -955,9 +955,9 @@ function newBoard() {
 function rigiraCarteI() {
     var carta1 = document.getElementById(valoriIdMemory[0]);
     var carta2 = document.getElementById(valoriIdMemory[1]);
-    carta1.style.background = 'url(icons/santoliM.jpg) no-repeat';
+    carta1.style.background = 'url(images/santoliM.jpg) no-repeat';
     carta1.innerHTML = "";
-    carta2.style.background = 'url(icons/santoliM.jpg) no-repeat';
+    carta2.style.background = 'url(images/santoliM.jpg) no-repeat';
     carta2.innerHTML = "";
     // pulisco entrambi gli array di supporto
     valoriMemoryI = [];
