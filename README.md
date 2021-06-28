@@ -189,7 +189,7 @@ Se si preme il tasto viene aggiunto un paragrafo con il valore corrente del cron
 è possibile aggiungere un numero infinito di paragrafi.
 
 
-### Tabella da lista di oggetti(70-75p) - PRENOTATO DA:
+### Tabella da lista di oggetti(70-75p) - PRENOTATO DA: Gabriele Benasso 
 Scirvere una funzione che crea una tabella a partire da una lista di oggetti.
 La funzione accetta 2 parametri:
 - Queryselector del contenitoore in cui andrà creata la tabella

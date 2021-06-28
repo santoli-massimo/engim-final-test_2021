@@ -175,6 +175,7 @@ function davideJS(){
     // otteniamo così la dimensione del div che si rimpicciolerà
     var davideBersWidth = $(".davideBersaglio").width();
     var davideBersHeight = $(".davideBersaglio").height();
+    console.log({davideBersWidth, davideBersHeight})
 
     // impostiamo il timer per farlo partire e per resettarlo
     var davFifteenSeconds = 10, davTimerDisplay = document.querySelector('#time');
@@ -306,6 +307,8 @@ function davideJS(){
     
     // gestiamo il movimento del div nell'area di gioco
     function movement() {
+        cH = davideSxGiocando.offsetHeight;
+        cW = davideSxGiocando.offsetWidth;
         /* sto dicendo al browser che ci sarà un'animazione, 
             data dalla funzione muoviDavideBersaglio */
         requestAnimationFrame(muoviDavideBersaglio);
@@ -981,7 +984,7 @@ function controlloGiulio() {
     const caratteri = /[!\@\#\$\%\^\&\*\(\)\_\-\+\=\<\,\>\?]/;
 
     //funzione che esegue i vari controlli
-    function control(firstPassword, secondPassword) {
+    function  control(firstPassword, secondPassword) {
         if (firstPassword !== secondPassword) {
             errore.innerHTML = "**Le password non coincidono";
             return;
@@ -1627,3 +1630,127 @@ button.addEventListener('click', function(){
   element.classList.add("display");
 });
 /* Ahmed code finisched here*/
+
+/* INIZIA IL CODICE DI GABRIELE */
+
+var carsList = [
+    {
+        marchio :"Alfa Romeo",
+        colore :"Rosso",
+        velMax :"200 km/h",
+        prezzo :"18000 €"
+    }
+,
+    {
+        marchio : "Fiat",
+        colore : "Blu",
+        velMax : "160 km/h",
+        prezzo : "7500 €"
+    },
+    {
+        marchio : "Volvo",
+        colore : "Nero",
+        velMax : "220 km/h",
+        prezzo : "27000 €"
+    },
+    {
+        marchio : "Mercedes",
+        colore : "Grigio",
+        velMax : "235 km/h",
+        prezzo : "32000 €"
+    }
+];
+
+var bikesList = [
+    {
+        marchio :"Ducati",
+        colore :"Rosso",
+        velMax :"230 km/h",
+        prezzo :"9000 €"
+    }
+,
+    {
+        marchio : "Suzuki",
+        colore : "Blu",
+        velMax : "220 km/h",
+        prezzo : "6500 €"
+    },
+    {
+        marchio : "Yamaha",
+        colore : "Nero",
+        velMax : "250 km/h",
+        prezzo : "8500 €"
+    },
+    {
+        marchio : "BMW",
+        colore : "Grigio",
+        velMax : "290 km/h",
+        prezzo : "12000 €"
+    }
+];
+
+function createTable(selector, arrayList){
+    selector.append(
+        '<tr>' + 
+            '<th id="th-1" class="border border-dark">Marchio</th>' +
+            '<th id="th-2" class="border border-dark">Colore</th>' +
+            '<th id="th-3" class="border border-dark">Vel. Max</th>' +
+            '<th id="th-4" class="border border-dark">Prezzo</th>' +
+        '</tr>'
+    )
+    for(i=0; i<arrayList.length; i++){
+        var list = arrayList[i];
+        selector.append(
+            '<tr>' +
+                '<td class="border border-dark">' + list.marchio +
+                '</td><td class="border border-dark">' + list.colore + 
+                '</td><td class="border border-dark">' + list.velMax + 
+                '</td><td class="border border-dark">' + list.prezzo + 
+                '</td>' + 
+            '</tr>'
+         );
+     }
+}
+
+$('#cars-btn').on('click', function(){
+    $('#car-table').removeClass('d-none');
+    $('#cars-btn').toggleClass('d-none');
+    createTable($('#car-table'), carsList);
+})
+$('#bikes-btn').on('click', function(){
+    $('#bike-table').removeClass('d-none');
+    $('#bikes-btn').toggleClass('d-none');
+    createTable($('#bike-table'), bikesList);
+})
+
+$('#btn-add').on('click', function(){
+    var option = document.getElementById('choose').value;
+    var marchio = document.getElementById('marchio').value;
+    var colore = document.getElementById('colore').value;
+    var velMax = document.getElementById('velMax').value;
+    var prezzo = document.getElementById('prezzo').value;
+    // console.log(option);
+    function createNewArray(arrayList){
+        var newArray = {
+            marchio : marchio,
+            colore : colore,
+            velMax : velMax,
+            prezzo : prezzo
+        }
+        arrayList.push(newArray);
+        if(option == 'Auto'){
+            $('#car-table').empty();
+            createTable($('#car-table'), carsList);
+            // console.log(option);
+        }if(option == 'Moto'){
+            $('#bike-table').empty();
+            createTable($('#bike-table'), bikesList);
+        }
+    }if(option == 'Auto'){
+        createNewArray(carsList);
+    }if(option == 'Moto'){
+        createNewArray(bikesList);
+    }
+    
+})
+/* FINISCE IL CODICE DI GABRIELE */
