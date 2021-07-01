@@ -1630,3 +1630,139 @@ button.addEventListener('click', function(){
   element.classList.add("display");
 });
 /* Ahmed code finisched here*/
+
+/* INIZIA IL CODICE DI GABRIELE */
+
+// creazione array object
+var carsList = [
+    {
+        marchio :"Alfa Romeo",
+        colore :"Rosso",
+        velMax :"200 km/h",
+        prezzo :"18000 €"
+    }
+,
+    {
+        marchio : "Fiat",
+        colore : "Blu",
+        velMax : "160 km/h",
+        prezzo : "7500 €"
+    },
+    {
+        marchio : "Volvo",
+        colore : "Nero",
+        velMax : "220 km/h",
+        prezzo : "27000 €"
+    },
+    {
+        marchio : "Mercedes",
+        colore : "Grigio",
+        velMax : "235 km/h",
+        prezzo : "32000 €"
+    }
+];
+
+var bikesList = [
+    {
+        marchio :"Ducati",
+        colore :"Rosso",
+        velMax :"230 km/h",
+        prezzo :"9000 €"
+    }
+,
+    {
+        marchio : "Suzuki",
+        colore : "Blu",
+        velMax : "220 km/h",
+        prezzo : "6500 €"
+    },
+    {
+        marchio : "Yamaha",
+        colore : "Nero",
+        velMax : "250 km/h",
+        prezzo : "8500 €"
+    },
+    {
+        marchio : "BMW",
+        colore : "Grigio",
+        velMax : "290 km/h",
+        prezzo : "12000 €"
+    }
+];
+
+// inizializzazione funzione
+function createTable(selector, arrayList){
+    // creo l'intestazione della tabella
+    selector.append(
+        '<tr>' + 
+            '<th id="th-1" class="border border-dark">Marchio</th>' +
+            '<th id="th-2" class="border border-dark">Colore</th>' +
+            '<th id="th-3" class="border border-dark">Vel. Max</th>' +
+            '<th id="th-4" class="border border-dark">Prezzo</th>' +
+        '</tr>'
+    )
+    // ciclo for che serve ad iterare i diversi oggetti all'interno dell'array
+    for(i=0; i<arrayList.length; i++){
+        var list = arrayList[i];
+        // creo la tabella con le diverse proprietà dei vari oggetti
+        selector.append(
+            '<tr>' +
+                '<td class="border border-dark">' + list.marchio +
+                '</td><td class="border border-dark">' + list.colore + 
+                '</td><td class="border border-dark">' + list.velMax + 
+                '</td><td class="border border-dark">' + list.prezzo + 
+                '</td>' + 
+            '</tr>'
+         );
+     }
+}
+// al click del pulsante per la creazione della lista delle macchine eseguo la funzione e nascondo il pulsante
+$('#cars-btn').on('click', function(){
+    $('#car-table').removeClass('d-none');
+    $('#cars-btn').toggleClass('d-none');
+    createTable($('#car-table'), carsList);
+})
+
+// al click del pulsante per la  creazione della lista delle moto eseguo la funzione e nascondo il pulsante
+$('#bikes-btn').on('click', function(){
+    $('#bike-table').removeClass('d-none');
+    $('#bikes-btn').toggleClass('d-none');
+    createTable($('#bike-table'), bikesList);
+})
+// creo funzione che alla compilazione del form aggiunge un elemento all'array e quindi alla tabella o delle macchine o delle moto
+$('#btn-add').on('click', function(){
+    // prendo i valori
+    var option = document.getElementById('choose').value;
+    var marchio = document.getElementById('marchio').value;
+    var colore = document.getElementById('colore').value;
+    var velMax = document.getElementById('velMax').value;
+    var prezzo = document.getElementById('prezzo').value;
+    // console.log(option);
+    // inizializzazione funzione per creazione di un nuovo oggetto
+    function createNewObject(arrayList){
+        var newArray = {
+            marchio : marchio,
+            colore : colore,
+            velMax : velMax,
+            prezzo : prezzo
+        }
+        // aggiungo l'oggetto all'array di oggetti
+        arrayList.push(newArray);
+        // in base al valore della select ricreo la lista delle macchine o delle moto 
+        if(option == 'Auto'){
+            $('#car-table').empty();
+            createTable($('#car-table'), carsList);
+            // console.log(option);
+        }if(option == 'Moto'){
+            $('#bike-table').empty();
+            createTable($('#bike-table'), bikesList);
+        }
+        // in base al valore della select faccio partire la funzione per creare la tabella con un nuovo oggetto 
+    }if(option == 'Auto'){
+        createNewObject(carsList);
+    }if(option == 'Moto'){
+        createNewObject(bikesList);
+    }
+    
+})
+/* FINISCE IL CODICE DI GABRIELE */
