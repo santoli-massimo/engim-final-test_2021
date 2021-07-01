@@ -175,6 +175,7 @@ function davideJS(){
     // otteniamo così la dimensione del div che si rimpicciolerà
     var davideBersWidth = $(".davideBersaglio").width();
     var davideBersHeight = $(".davideBersaglio").height();
+    console.log({davideBersWidth, davideBersHeight})
 
     // impostiamo il timer per farlo partire e per resettarlo
     var davFifteenSeconds = 10, davTimerDisplay = document.querySelector('#time');
@@ -306,6 +307,8 @@ function davideJS(){
     
     // gestiamo il movimento del div nell'area di gioco
     function movement() {
+        cH = davideSxGiocando.offsetHeight;
+        cW = davideSxGiocando.offsetWidth;
         /* sto dicendo al browser che ci sarà un'animazione, 
             data dalla funzione muoviDavideBersaglio */
         requestAnimationFrame(muoviDavideBersaglio);
@@ -981,7 +984,7 @@ function controlloGiulio() {
     const caratteri = /[!\@\#\$\%\^\&\*\(\)\_\-\+\=\<\,\>\?]/;
 
     //funzione che esegue i vari controlli
-    function control(firstPassword, secondPassword) {
+    function  control(firstPassword, secondPassword) {
         if (firstPassword !== secondPassword) {
             errore.innerHTML = "**Le password non coincidono";
             return;
