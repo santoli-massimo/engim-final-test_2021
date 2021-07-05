@@ -1616,20 +1616,21 @@ function cancella() {
 }
 
 
-var button = document.getElementById('button');
-
-var element = document.getElementById("screen");
-element.style.display = 'none';
-
-
-
-button.addEventListener('click', function(){
-  element.style.display = '';
-   element.classList.add("screen");
-  element.classList.add("pulsante");
-  element.classList.add("display");
-});
+// var button = document.getElementById('button');
+//
+// var element = document.getElementById("screen");
+// element.style.display = 'none';
+//
+//
+//
+// button.addEventListener('click', function(){
+//   element.style.display = '';
+//    element.classList.add("screen");
+//   element.classList.add("pulsante");
+//   element.classList.add("display");
+// });
 /* Ahmed code finisched here*/
+
 
 /* INIZIA IL CODICE DI GABRIELE */
 
@@ -1717,7 +1718,10 @@ function createTable(selector, arrayList){
      }
 }
 // al click del pulsante per la creazione della lista delle macchine eseguo la funzione e nascondo il pulsante
+
+console.log('sdffds', $('#cars-btn'))
 $('#cars-btn').on('click', function(){
+    console.log('click')
     $('#car-table').removeClass('d-none');
     $('#cars-btn').toggleClass('d-none');
     createTable($('#car-table'), carsList);

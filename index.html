@@ -85,12 +85,14 @@
               <a class="nav-link" data-page="franco">Franco</a>
             </li>
             <li class="nav-item page-info page-link">
-                <a class="nav-link" data-page="montassar">Montassar</a>
-              </li>
-              <li class="nav-item page-info page-link">
-                <a class="nav-link" data-page="ahmed">Ahmed D.</a>
-              </li>
-
+              <a class="nav-link" data-page="montassar">Montassar</a>
+            </li>
+            <li class="nav-item page-info page-link">
+              <a class="nav-link" data-page="ahmed">Ahmed D.</a>
+            </li>
+            <li class="nav-item page-info page-link">
+              <a class="nav-link" data-page="gabrieleb">Gabriele B.</a>
+            </li>
         </ul>
     </div>
 </nav>
@@ -510,7 +512,7 @@
 
     <!-- Ahmed HTML codes started here -->
     <div class="page" id="ahmed">
-    <div class="wrapper">
+        <div class="wrapper">
         <div class="iphone">
           <div class="power"></div>
           <div class="lock"></div>
@@ -518,7 +520,7 @@
           <div class="volume down"></div>
           <div class="camera"></div>
           <div class="speaker"></div>
-          <div class="screen">
+          <div class="screen" id="screen">
             
             <div class="container">
                <!--div title-->
@@ -602,84 +604,87 @@
             
             
           </div>
-          <div class="button">
+          <div class="button" id="button">
             <div class="square"></div>
           </div>
         </div>
+
       </div>
-      </div>
+    </div>
 
 
 
     <!-- Ahmed HTML codes finished here -->
 
     <!-- INIZIA IL CODICE DI GABRIELE -->
-    <div class="col-12">
+    <div class="page" id="gabrieleb">
+      <div class="col-12">
         <div class="row">
-            <div class="col-12 col-lg-6">
-                <div class="col-12">
-                    <table id="car-table" class="d-none rounded-lg border border-dark w-100">
+          <div class="col-12 col-lg-6">
+            <div class="col-12">
+              <table id="car-table" class="d-none rounded-lg border border-dark w-100">
 
-                    </table>
-                </div>
-                <div class="col-12 d-flex justify-content-center">
-                    <div class="col-4 border border-dark rounded-lg text-center" id="cars-btn">
-                        CREA TABELLA MACCHINE
-                    </div>
-                </div>
+              </table>
             </div>
-            <div class="col-12 col-lg-6">
-                <div class="col-12">
-                    <table id="bike-table" class="d-none rounded-lg border border-dark w-100">
+            <div class="col-12 d-flex justify-content-center">
+              <div class="col-4 border border-dark rounded-lg text-center" id="cars-btn">
+                CREA TABELLA MACCHINE
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-lg-6">
+            <div class="col-12">
+              <table id="bike-table" class="d-none rounded-lg border border-dark w-100">
 
-                    </table>
-                </div>
-                <div class="col-12 d-flex justify-content-center">
-                    <div class="col-4 border border-dark rounded-lg text-center" id="bikes-btn">
-                        CREA TABELLA MOTO
-                    </div>
-                </div>
+              </table>
             </div>
-            <div class="col-12 my-5">
-                <div class="row d-flex justify-content-center">
-                    <div class="col-6">
-                        <form action="">
-                            <div class="form-row d-flex justify-content-center">
-                                <div class="col-12 form-group">
-                                    <label for="Auto o Moto?">Auto o Moto?</label>
-                                    <select id="choose" class="form-control">
-                                        <option></option>
-                                        <option>Auto</option>
-                                        <option>Moto</option>
-                                    </select>
-                                </div>
-                                <div class="col-12 form-group">
-                                    <label for="Marchio">Marchio</label>
-                                    <input type="text" id="marchio" class="form-control">
-                                </div>
-                                <div class="col-12 form-group">
-                                    <label for="Colore">Colore</label>
-                                    <input type="text" id="colore" class="form-control">
-                                </div>
-                                <div class="col-12 form-group">
-                                    <label for="VelMax">Vel. Max</label>
-                                    <input type="text" id="velMax" class="form-control">
-                                </div>
-                                <div class="col-12 form-group">
-                                    <label for="Prezzo">Prezzo</label>
-                                    <input type="text" id="prezzo" class="form-control">
-                                </div>
-                                <div class="col-6 d-flex justify-content-center">
-                                    <div class="btn-submit btn btn-primary" id="btn-add">
-                                        AGGIUNGI
-                                    </div>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
+            <div class="col-12 d-flex justify-content-center">
+              <div class="col-4 border border-dark rounded-lg text-center" id="bikes-btn">
+                CREA TABELLA MOTO
+              </div>
             </div>
+          </div>
+          <div class="col-12 my-5">
+            <div class="row d-flex justify-content-center">
+              <div class="col-6">
+                <form action="">
+                  <div class="form-row d-flex justify-content-center">
+                    <div class="col-12 form-group">
+                      <label for="Auto o Moto?">Auto o Moto?</label>
+                      <select id="choose" class="form-control">
+                        <option></option>
+                        <option>Auto</option>
+                        <option>Moto</option>
+                      </select>
+                    </div>
+                    <div class="col-12 form-group">
+                      <label for="Marchio">Marchio</label>
+                      <input type="text" id="marchio" class="form-control">
+                    </div>
+                    <div class="col-12 form-group">
+                      <label for="Colore">Colore</label>
+                      <input type="text" id="colore" class="form-control">
+                    </div>
+                    <div class="col-12 form-group">
+                      <label for="VelMax">Vel. Max</label>
+                      <input type="text" id="velMax" class="form-control">
+                    </div>
+                    <div class="col-12 form-group">
+                      <label for="Prezzo">Prezzo</label>
+                      <input type="text" id="prezzo" class="form-control">
+                    </div>
+                    <div class="col-6 d-flex justify-content-center">
+                      <div class="btn-submit btn btn-primary" id="btn-add">
+                        AGGIUNGI
+                      </div>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
     </div>
 
     <!-- FINISCE IL CODICE DI GABRIELE -->
